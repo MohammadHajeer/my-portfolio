@@ -1,26 +1,154 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-dm-sans: var(--font-dm-sans);
+  --font-dm-mono: var(--font-dm-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 2px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #111;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes floatA {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+@keyframes floatB {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+}
+@keyframes floatC {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.05);
+  }
+}
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulseRing {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.22;
+    transform: scale(1.04);
+  }
+}
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: #6366f1;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1s steps(1) infinite;
+}
+.geo-orbit {
+  animation: spinSlow 22s linear infinite;
+}
+.geo-float-a {
+  animation: floatA 5.5s ease-in-out infinite;
+}
+.geo-float-b {
+  animation: floatB 7s ease-in-out infinite;
+}
+.geo-float-c {
+  animation: floatC 4.8s ease-in-out infinite;
+}
+.pulse-ring {
+  animation: pulseRing 3.5s ease-in-out infinite;
+}
+.hero-content {
+  animation: heroIn 0.7s ease forwards;
+}
+.hero-photo {
+  animation: heroIn 0.7s ease 0.2s both;
+}
+
+.wf-step {
+  position: relative;
+}
+.wf-step::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: calc(50% + 26px);
+  width: calc(100% - 52px);
+  height: 1px;
+  background: #e5e7eb;
+}
+.dark .wf-step::after {
+  background: #1f1f1f;
+}
+.wf-step:last-child::after {
+  display: none;
+}
+@media (max-width: 640px) {
+  .wf-step::after {
+    display: none;
+  }
 }

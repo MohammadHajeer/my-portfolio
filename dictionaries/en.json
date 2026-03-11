@@ -1,0 +1,43 @@
+{
+  "Metadata": {
+    "title": "Mohammad Hajeer | Software Engineer",
+    "description": "Welcome to my personal portfolio. I specialize in building modern and responsive web applications using technologies like Next.js, React, and Tailwind CSS.",
+    "ogDescription": "Explore my profile as a Software Engineer. I build fast, modern web apps with tools like Next.js, React, and Tailwind CSS."
+  },
+  "Navigation": [
+    { "id": "home", "label": "Home" },
+    { "id": "about", "label": "About" },
+    { "id": "skills", "label": "Skills" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "contact", "label": "Contact" }
+  ],
+  "Hero": {
+    "name": "Mohammad Hajeer",
+    "title": "Software Engineer",
+    "subtitle": "Learning Web Security & Building Modern Web Applications",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact me"
+  },
+  "About_Me": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm a passionate Next.js developer with a focus on creating performant and user-friendly web applications. My journey in web development has led me to specialize in modern React frameworks and cutting-edge technologies.",
+      "Currently expanding my expertise into web security, I'm committed to building not just beautiful, but also secure and robust applications. I believe in writing clean, maintainable code and staying updated with the latest industry trends."
+    ]
+  },
+  "Skills": {
+    "title": "Skills & Expertise",
+    "primarySkills": "Primary Skills",
+    "backendTools": "Backend & Tools",
+    "currentlyLearning": "Currently Learning"
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "paragraphs": [
+      "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+      "\"Allah loves that when one of you does a deed, he perfects it.\" — Prophet Muhammad ﷺ",
+      "I deliver high-quality, maintainable work with care and attention to detail."
+    ]
+  },
+  "Footer": "Mohammad Hajeer. Powered by Next.js and Tailwind CSS."
+}
