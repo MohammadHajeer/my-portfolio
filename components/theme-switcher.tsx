@@ -15,20 +15,20 @@ export default function ThemeSwitcher() {
   if (!mounted)
     return (
       <span className="p-2 rounded-lg transition-colors cursor-not-allowed">
-        <Loader className="size-5 animate-spin" size={20} />
+        <Loader className="size-5 animate-spin" size={16} />
       </span>
     );
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
       className={`p-2 rounded-lg transition-colors ${
         theme === "dark"
           ? "bg-white/10 hover:bg-white/20"
           : "bg-gray-100 hover:bg-gray-200"
       }`}
     >
-      {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+      {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   );
 }

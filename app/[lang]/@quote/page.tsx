@@ -3,9 +3,10 @@ import { cn } from "@/lib/utils";
 
 export default function Quote() {
   return (
-    <div className="max-w-2xl mx-auto">
+    <>
       <FadeIn>
         <div
+          dir="ltr"
           className={cn(
             "border-l-4 pl-8 pr-6 py-7 rounded-r-xl",
             "bg-gray-50 dark:bg-[#0f0f0f]",
@@ -24,7 +25,7 @@ export default function Quote() {
           </p>
           <p
             className={cn(
-              "text-right font-dm-mono text-lg sm:text-xl leading-loose tracking-wide mb-5",
+              "text-right text-lg sm:text-xl leading-loose tracking-wide mb-5 font-ibm-plex-arabic",
               "text-cyan-500 dark:text-cyan-400",
             )}
             dir="rtl"
@@ -42,6 +43,6 @@ export default function Quote() {
           </p>
         </div>
       </FadeIn>
-    </div>
+    </>
   );
 }

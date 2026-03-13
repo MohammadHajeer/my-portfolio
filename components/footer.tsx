@@ -4,7 +4,7 @@ import NavLink from "./nav-link";
 export default function Footer() {
   return (
     <footer className="py-7 px-6 border-t border-gray-100 dark:border-[#111]">
-      <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-4">
         <div>
           <p className="font-dm-sans text-sm font-medium text-gray-900 dark:text-gray-100">
             Ahmad Al-Rashid

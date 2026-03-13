@@ -5,7 +5,7 @@ import { PROJECTS } from "@/lib/constants";
 
 export default function Projects() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <>
       <FadeIn>
         <SectionLabel text="projects" />
         <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-10 text-gray-900 dark:text-gray-50">
@@ -67,6 +67,6 @@ export default function Projects() {
           </FadeIn>
         ))}
       </div>
-    </div>
+    </>
   );
 }

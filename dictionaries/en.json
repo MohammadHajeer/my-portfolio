@@ -1,43 +1,205 @@
 {
   "Metadata": {
     "title": "Mohammad Hajeer | Software Engineer",
-    "description": "Welcome to my personal portfolio. I specialize in building modern and responsive web applications using technologies like Next.js, React, and Tailwind CSS.",
-    "ogDescription": "Explore my profile as a Software Engineer. I build fast, modern web apps with tools like Next.js, React, and Tailwind CSS."
+    "description": "Full-Stack Software Engineer & CS Graduate. I build scalable web applications from the ground up — clean APIs, performant frontends, and solid infrastructure.",
+    "ogDescription": "Explore Mohammad Hajeer's portfolio. Software Engineer specializing in Next.js, React, Node.js, and modern full-stack web development."
   },
+
   "Navigation": [
-    { "id": "home", "label": "Home" },
     { "id": "about", "label": "About" },
-    { "id": "skills", "label": "Skills" },
+    { "id": "stack", "label": "Stack" },
     { "id": "projects", "label": "Projects" },
+    { "id": "workflow", "label": "Workflow" },
     { "id": "contact", "label": "Contact" }
   ],
+
+  "Nav": {
+    "logo": "<dev/>",
+    "hireMe": "Hire Me",
+    "toggleTheme": "Toggle theme"
+  },
+
   "Hero": {
+    "availableBadge": "Available for work",
     "name": "Mohammad Hajeer",
-    "title": "Software Engineer",
-    "subtitle": "Learning Web Security & Building Modern Web Applications",
-    "viewProjects": "View Projects",
-    "contactMe": "Contact me"
-  },
-  "About_Me": {
-    "title": "About Me",
-    "paragraphs": [
-      "I'm a passionate Next.js developer with a focus on creating performant and user-friendly web applications. My journey in web development has led me to specialize in modern React frameworks and cutting-edge technologies.",
-      "Currently expanding my expertise into web security, I'm committed to building not just beautiful, but also secure and robust applications. I believe in writing clean, maintainable code and staying updated with the latest industry trends."
+    "photoBadge": "Full-Stack Engineer",
+    "photoAlt": "Mohammad Hajeer",
+    "photoFallback": "Your Photo",
+    "title": "Software Engineer · Full-Stack Web Developer · CS Graduate",
+    "intro": "I build scalable web applications from the ground up — clean APIs, performant frontends, and solid infrastructure. Turning ideas into production-ready products with precision.",
+    "viewProjects": "View Projects →",
+    "getInTouch": "Get In Touch",
+    "stats": [
+      { "value": "3+", "label": "Years Experience" },
+      { "value": "15+", "label": "Projects Shipped" },
+      { "value": "8+", "label": "Technologies" }
     ]
   },
-  "Skills": {
-    "title": "Skills & Expertise",
-    "primarySkills": "Primary Skills",
-    "backendTools": "Backend & Tools",
-    "currentlyLearning": "Currently Learning"
+
+  "About": {
+    "sectionLabel": "about",
+    "heading": "Building things that matter",
+    "paragraphs": [
+      "Computer Science graduate with a strong foundation in algorithms, systems design, and software engineering principles. I specialize in crafting end-to-end web solutions that balance technical rigor with clean UX.",
+      "Whether architecting a database schema or fine-tuning a React component, I care about the craft at every layer of the stack."
+    ],
+    "focusAreas": [
+      { "title": "Frontend", "desc": "Pixel-perfect, fast, accessible UIs" },
+      { "title": "Backend", "desc": "Robust APIs & service architecture" },
+      { "title": "Systems", "desc": "Scalable design & infrastructure" }
+    ]
   },
+
+  "TechStack": {
+    "sectionLabel": "tech stack",
+    "heading": "Tools of the trade",
+    "categories": {
+      "Frontend": "Frontend",
+      "Language": "Language",
+      "Backend": "Backend",
+      "Database": "Database",
+      "DevOps": "DevOps",
+      "API": "API"
+    },
+    "items": [
+      { "name": "React", "cat": "Frontend" },
+      { "name": "Next.js", "cat": "Frontend" },
+      { "name": "TypeScript", "cat": "Language" },
+      { "name": "Tailwind", "cat": "Frontend" },
+      { "name": "Node.js", "cat": "Backend" },
+      { "name": "Express", "cat": "Backend" },
+      { "name": "PostgreSQL", "cat": "Database" },
+      { "name": "MongoDB", "cat": "Database" },
+      { "name": "Docker", "cat": "DevOps" },
+      { "name": "Git", "cat": "DevOps" },
+      { "name": "GraphQL", "cat": "API" },
+      { "name": "Linux", "cat": "DevOps" }
+    ]
+  },
+
+  "Projects": {
+    "sectionLabel": "projects",
+    "heading": "Selected work",
+    "statusLabels": {
+      "Live": "Live",
+      "Open Source": "Open Source",
+      "In Progress": "In Progress",
+      "Archived": "Archived"
+    },
+    "items": [
+      {
+        "title": "FullStack SaaS Platform",
+        "desc": "Multi-tenant SaaS application with auth, billing, and real-time collaboration. Built for scale with row-level security and background jobs.",
+        "status": "Live"
+      },
+      {
+        "title": "API Gateway Service",
+        "desc": "High-performance API gateway handling rate limiting, request routing, and JWT validation. Processes 10k+ req/sec.",
+        "status": "Open Source"
+      },
+      {
+        "title": "Real-Time Chat App",
+        "desc": "End-to-end encrypted messaging platform with WebSocket rooms, file sharing, and presence indicators.",
+        "status": "Live"
+      },
+      {
+        "title": "Dev Portfolio CMS",
+        "desc": "Headless CMS for developer portfolios with Markdown support, custom themes, and GitHub integration.",
+        "status": "Live"
+      }
+    ]
+  },
+
+  "Workflow": {
+    "sectionLabel": "workflow",
+    "heading": "From idea to production",
+    "subheading": "A structured pipeline that turns rough concepts into polished, maintained products.",
+    "deliveryLabel": "Typical Delivery",
+    "deliveryValue": "4–12 weeks depending on scope",
+    "steps": [
+      {
+        "step": "01",
+        "label": "Idea",
+        "icon": "💡",
+        "desc": "Client vision & goal discovery"
+      },
+      {
+        "step": "02",
+        "label": "Planning",
+        "icon": "📅",
+        "desc": "Scope, timeline & architecture"
+      },
+      {
+        "step": "03",
+        "label": "Design",
+        "icon": "🎨",
+        "desc": "Wireframes & UI prototyping"
+      },
+      {
+        "step": "04",
+        "label": "Build",
+        "icon": "🔨",
+        "desc": "Frontend & backend development"
+      },
+      {
+        "step": "05",
+        "label": "Testing",
+        "icon": "🔍",
+        "desc": "QA, unit & integration tests"
+      },
+      {
+        "step": "06",
+        "label": "Deploy",
+        "icon": "🚀",
+        "desc": "CI/CD pipeline & release"
+      },
+      {
+        "step": "07",
+        "label": "Host",
+        "icon": "☁️",
+        "desc": "Cloud infrastructure & scaling"
+      },
+      {
+        "step": "08",
+        "label": "Maintain",
+        "icon": "🛠️",
+        "desc": "Monitoring, updates & support"
+      }
+    ]
+  },
+
   "Contact": {
-    "title": "Get In Touch",
-    "paragraphs": [
-      "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-      "\"Allah loves that when one of you does a deed, he perfects it.\" — Prophet Muhammad ﷺ",
-      "I deliver high-quality, maintainable work with care and attention to detail."
+    "sectionLabel": "contact",
+    "heading": "Let's build together",
+    "subheading": "Open to full-time roles, freelance projects, and interesting collaborations.",
+    "links": [
+      {
+        "icon": "in",
+        "label": "LinkedIn",
+        "sub": "linkedin.com/in/muhammad-hajeer",
+        "href": "https://linkedin.com"
+      },
+      {
+        "icon": "⑂",
+        "label": "GitHub",
+        "sub": "github.com/mohammadhajeer",
+        "href": "https://github.com"
+      },
+      {
+        "icon": "@",
+        "label": "Email",
+        "sub": "mohammadhajeer002@gmail.com",
+        "href": "mailto:mohammadhajeer002@gmail.com",
+        "copyText": "Copy",
+        "copied": "Copied!"
+      }
     ]
   },
-  "Footer": "Mohammad Hajeer. Powered by Next.js and Tailwind CSS."
+
+  "Footer": {
+    "name": "Mohammad Hajeer",
+    "copyright": "All rights reserved",
+    "builtWith": "Built with React & Tailwind",
+    "quickLinks": ["GitHub", "LinkedIn", "Email"]
+  }
 }

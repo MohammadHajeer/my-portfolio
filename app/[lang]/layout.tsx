@@ -1,21 +1,9 @@
 import { ReactNode } from "react";
-import { DM_Mono, DM_Sans } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import Section from "@/components/section";
 import "../globals.css";
-
-const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
-  weight: ["300", "400", "500"],
-  subsets: ["latin"],
-});
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 
 export async function generateMetadata({
   params,
@@ -44,7 +32,9 @@ export async function generateMetadata({
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
+  params,
+  header,
   children: hero,
   about,
   techStack,
@@ -53,69 +43,42 @@ export default function RootLayout({
   quote,
   contact,
 }: Readonly<{
+  params: Promise<{ lang: string }>;
+  header?: ReactNode;
   children: ReactNode;
-  about: ReactNode;
-  techStack: ReactNode;
-  projects: ReactNode;
-  workflow: ReactNode;
-  quote: ReactNode;
-  contact: ReactNode;
+  about?: ReactNode;
+  techStack?: ReactNode;
+  projects?: ReactNode;
+  workflow?: ReactNode;
+  quote?: ReactNode;
+  contact?: ReactNode;
 }>) {
+  const { lang } = await params;
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${dmSans.variable} ${dmMono.variable} antialiased font-dm-mono bg-gray-50 dark:bg-[#0a0a0a]
-        text-gray-800 dark:text-gray-200`}
+    <>
+      <main
+        lang={lang}
+        dir={lang === "ar" ? "rtl" : "ltr"}
+        className={cn(
+          "antialiased bg-gray-50 dark:bg-[#0a0a0a] text-gray-800 dark:text-gray-200",
+          lang === "ar" ? "font-ibm-plex-arabic!" : "font-dm-sans!",
+        )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
+        {header}
+        <section
+          id="hero"
+          className="min-h-screen flex items-center pt-14 px-6"
         >
-          <Navbar />
-          <section
-            id="hero"
-            className="min-h-screen flex items-center pt-14 px-6"
-          >
-            {hero}
-          </section>
-          <section
-            id="about"
-            className="py-20 px-6 border-t border-gray-100 dark:border-[#111]"
-          >
-            {about}
-          </section>
-          <section
-            id="stack"
-            className="py-20 px-6 border-t border-gray-100 dark:border-[#111]"
-          >
-            {techStack}
-          </section>
-          <section
-            id="projects"
-            className="py-20 px-6 border-t border-gray-100 dark:border-[#111]"
-          >
-            {projects}
-          </section>
-          <section
-            id="workflow"
-            className="py-20 px-6 border-t border-gray-100 dark:border-[#111]"
-          >
-            {workflow}
-          </section>
-          <section className="py-20 px-6 border-t border-gray-100 dark:border-[#111]">
-            {quote}
-          </section>
-          <section
-            id="contact"
-            className="py-20 px-6 border-t border-gray-100 dark:border-[#111]"
-          >
-            {contact}
-          </section>
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+          {hero}
+        </section>
+        <Section id="about">{about}</Section>
+        <Section id="stack">{techStack}</Section>
+        <Section id="projects">{projects}</Section>
+        <Section id="workflow">{workflow}</Section>
+        <Section id="quote">{quote}</Section>
+        <Section id="contact">{contact}</Section>
+        <Footer />
+      </main>
+    </>
   );
 }

@@ -1,25 +1,39 @@
 import FadeIn from "@/components/fade-in";
 import SectionLabel from "@/components/section-label";
-import { WORKFLOW } from "@/lib/constants";
+import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
 
-export default function Workflow() {
+export default async function Workflow({
+  params,
+}: {
+  params: Promise<{ lang: "en" | "ar" }>;
+}) {
+  const { lang } = await params;
+  const {
+    Workflow: {
+      sectionLabel,
+      deliveryLabel,
+      deliveryValue,
+      heading,
+      steps,
+      subheading,
+    },
+  } = await getDictionary(lang);
   return (
-    <div className="max-w-5xl mx-auto">
+    <>
       <FadeIn>
-        <SectionLabel text="workflow" />
+        <SectionLabel text={sectionLabel} />
         <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-gray-900 dark:text-gray-50">
-          From idea to production
+          {heading}
         </h2>
         <p className="font-dm-sans text-sm mb-14 text-gray-400 dark:text-gray-500">
-          A structured pipeline that turns rough concepts into polished,
-          maintained products.
+          {subheading}
         </p>
       </FadeIn>
 
       <FadeIn delay={100}>
         <div className="flex flex-wrap justify-between gap-y-10">
-          {WORKFLOW.map((w) => (
+          {steps.map((w) => (
             <div
               key={w.step}
               className="wf-step flex flex-col items-center gap-2 flex-1 min-w-20 group"
@@ -45,16 +59,10 @@ export default function Workflow() {
               >
                 {w.icon}
               </div>
-              <span
-                className="font-dm-sans text-xs font-semibold text-center
-                                         text-gray-800 dark:text-gray-100"
-              >
+              <span className="font-dm-sans text-xs font-semibold text-center text-gray-800 dark:text-gray-100">
                 {w.label}
               </span>
-              <span
-                className="text-[10px] text-center leading-snug max-w-22
-                                         text-gray-400 dark:text-gray-600"
-              >
+              <span className="text-[10px] text-center leading-snug max-w-22 text-gray-400 dark:text-gray-600">
                 {w.desc}
               </span>
             </div>
@@ -76,7 +84,7 @@ export default function Workflow() {
               "text-gray-400 dark:text-gray-600",
             )}
           >
-            Typical Delivery
+            {deliveryLabel}
           </span>
           <div
             className={cn(
@@ -92,10 +100,10 @@ export default function Workflow() {
               "text-cyan-600 dark:text-cyan-400",
             )}
           >
-            4&nbsp;12 weeks depending on scope
+            {deliveryValue}
           </span>
         </div>
       </FadeIn>
-    </div>
+    </>
   );
 }

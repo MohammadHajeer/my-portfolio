@@ -1,20 +1,28 @@
 import FadeIn from "@/components/fade-in";
 import SectionLabel from "@/components/section-label";
-import { TECH_STACK } from "@/lib/constants";
+import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
 
-export default function TechStack() {
+export default async function TechStack({
+  params,
+}: {
+  params: Promise<{ lang: "en" | "ar" }>;
+}) {
+  const { lang } = await params;
+  const {
+    TechStack: { sectionLabel, heading, items },
+  } = await getDictionary(lang);
   return (
-    <div className="max-w-4xl mx-auto">
+    <>
       <FadeIn>
-        <SectionLabel text="tech stack" />
+        <SectionLabel text={sectionLabel} />
         <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-10 text-gray-900 dark:text-gray-50">
-          Tools of the trade
+          {heading}
         </h2>
       </FadeIn>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-        {TECH_STACK.map((t, i) => (
+        {items.map((t, i) => (
           <FadeIn key={t.name} delay={i * 40}>
             <div
               className={cn(
@@ -26,7 +34,7 @@ export default function TechStack() {
                 "shadow-sm dark:shadow-none",
               )}
             >
-              <span className="text-2xl">{t.icon}</span>
+              {/* <span className="text-2xl">{t.icon}</span> */}
               <span
                 className={cn(
                   "font-dm-sans text-[13px] font-medium",
@@ -47,6 +55,6 @@ export default function TechStack() {
           </FadeIn>
         ))}
       </div>
-    </div>
+    </>
   );
 }

@@ -1,35 +1,38 @@
 import FadeIn from "@/components/fade-in";
 import SectionLabel from "@/components/section-label";
-import { FOCUS_AREAS, SKILLS } from "@/lib/constants";
+import { SKILLS } from "@/lib/constants";
+import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
 
-export default function About() {
+export default async function About({
+  params,
+}: {
+  params: Promise<{ lang: "en" | "ar" }>;
+}) {
+  const { lang } = await params;
+  const { About } = await getDictionary(lang);
   return (
-    <div className="max-w-4xl mx-auto">
+    <>
       <FadeIn>
-        <SectionLabel text="about" />
+        <SectionLabel text={About.sectionLabel} />
         <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-10 text-gray-900 dark:text-gray-50">
-          Building things that matter
+          {About.heading}
         </h2>
       </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <FadeIn delay={100}>
           <p className="font-dm-sans text-[15px] leading-loose mb-5 text-gray-500 dark:text-gray-400">
-            Computer Science graduate with a strong foundation in algorithms,
-            systems design, and software engineering principles. I specialize in
-            crafting end-to-end web solutions that balance technical rigor with
-            clean UX.
+            {About.paragraphs[0]}{" "}
           </p>
           <p className="font-dm-sans text-[15px] leading-loose text-gray-500 dark:text-gray-400">
-            Whether architecting a database schema or fine-tuning a React
-            component, I care about the craft at every layer of the stack.
+            {About.paragraphs[1]}
           </p>
         </FadeIn>
 
         <FadeIn delay={200}>
           <div className="grid grid-cols-3 gap-3 mb-6">
-            {FOCUS_AREAS.map((f) => (
+            {About.focusAreas.map((f) => (
               <div
                 key={f.title}
                 className={cn(
@@ -41,7 +44,7 @@ export default function About() {
                   "shadow-sm dark:shadow-none",
                 )}
               >
-                <div className="text-xl mb-2">{f.icon}</div>
+                {/* <div className="text-xl mb-2">{f.icon}</div> */}
                 <div
                   className={cn(
                     "font-dm-sans text-[13px] font-semibold mb-1",
@@ -81,6 +84,6 @@ export default function About() {
           </div>
         </FadeIn>
       </div>
-    </div>
+    </>
   );
 }

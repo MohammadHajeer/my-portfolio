@@ -61,52 +61,6 @@ export const PROJECTS = [
   },
 ];
 
-export const WORKFLOW = [
-  {
-    step: "01",
-    label: "Idea",
-    icon: "💡",
-    desc: "Client vision & goal discovery",
-  },
-  {
-    step: "02",
-    label: "Planning",
-    icon: "📋",
-    desc: "Scope, timeline & architecture",
-  },
-  {
-    step: "03",
-    label: "Design",
-    icon: "✏️",
-    desc: "Wireframes & UI prototyping",
-  },
-  {
-    step: "04",
-    label: "Build",
-    icon: "⚡",
-    desc: "Frontend & backend development",
-  },
-  {
-    step: "05",
-    label: "Testing",
-    icon: "🧪",
-    desc: "QA, unit & integration tests",
-  },
-  { step: "06", label: "Deploy", icon: "🚀", desc: "CI/CD pipeline & release" },
-  {
-    step: "07",
-    label: "Host",
-    icon: "☁️",
-    desc: "Cloud infrastructure & scaling",
-  },
-  {
-    step: "08",
-    label: "Maintain",
-    icon: "🔧",
-    desc: "Monitoring, updates & support",
-  },
-];
-
 export const FOCUS_AREAS = [
   {
     icon: "⚡",
