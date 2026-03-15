@@ -1,5 +1,5 @@
 import FadeIn from "@/components/fade-in";
-import SectionLabel from "@/components/section-label";
+import SectionHeader from "@/components/section-header";
 import { SKILLS } from "@/lib/constants";
 import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
@@ -10,29 +10,26 @@ export default async function About({
   params: Promise<{ lang: "en" | "ar" }>;
 }) {
   const { lang } = await params;
-  const { About } = await getDictionary(lang);
+  const {
+    About: { sectionLabel, heading, paragraphs, focusAreas },
+  } = await getDictionary(lang);
   return (
     <>
-      <FadeIn>
-        <SectionLabel text={About.sectionLabel} />
-        <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-10 text-gray-900 dark:text-gray-50">
-          {About.heading}
-        </h2>
-      </FadeIn>
+      <SectionHeader lang={lang} label={sectionLabel} heading={heading} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <FadeIn delay={100}>
           <p className="font-dm-sans text-[15px] leading-loose mb-5 text-gray-500 dark:text-gray-400">
-            {About.paragraphs[0]}{" "}
+            {paragraphs[0]}{" "}
           </p>
           <p className="font-dm-sans text-[15px] leading-loose text-gray-500 dark:text-gray-400">
-            {About.paragraphs[1]}
+            {paragraphs[1]}
           </p>
         </FadeIn>
 
         <FadeIn delay={200}>
           <div className="grid grid-cols-3 gap-3 mb-6">
-            {About.focusAreas.map((f) => (
+            {focusAreas.map((f) => (
               <div
                 key={f.title}
                 className={cn(

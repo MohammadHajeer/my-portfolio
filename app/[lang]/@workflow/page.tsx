@@ -1,7 +1,7 @@
-import FadeIn from "@/components/fade-in";
-import SectionLabel from "@/components/section-label";
-import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
+import { getDictionary } from "@/lib/dictionaries";
+import FadeIn from "@/components/fade-in";
+import SectionHeader from "@/components/section-header";
 
 export default async function Workflow({
   params,
@@ -21,15 +21,12 @@ export default async function Workflow({
   } = await getDictionary(lang);
   return (
     <>
-      <FadeIn>
-        <SectionLabel text={sectionLabel} />
-        <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-gray-900 dark:text-gray-50">
-          {heading}
-        </h2>
-        <p className="font-dm-sans text-sm mb-14 text-gray-400 dark:text-gray-500">
-          {subheading}
-        </p>
-      </FadeIn>
+      <SectionHeader
+        lang={lang}
+        label={sectionLabel}
+        heading={heading}
+        subheading={subheading}
+      />
 
       <FadeIn delay={100}>
         <div className="flex flex-wrap justify-between gap-y-10">

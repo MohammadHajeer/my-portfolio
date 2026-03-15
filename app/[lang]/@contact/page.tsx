@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import FadeIn from "@/components/fade-in";
-import SectionLabel from "@/components/section-label";
 import { getDictionary } from "@/lib/dictionaries";
+import FadeIn from "@/components/fade-in";
 import CopyToClipboard from "@/components/copy-to-clipboard";
+import SectionHeader from "@/components/section-header";
 
 export default async function Contact({
   params,
@@ -15,20 +15,12 @@ export default async function Contact({
   } = await getDictionary(lang);
   return (
     <>
-      <FadeIn>
-        <SectionLabel text={sectionLabel} />
-        <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-gray-900 dark:text-gray-50">
-          {heading}
-        </h2>
-        <p
-          className={cn(
-            "text-sm mb-10 text-gray-400 dark:text-gray-500",
-            lang === "en" && "font-dm-sans",
-          )}
-        >
-          {subheading}
-        </p>
-      </FadeIn>
+      <SectionHeader
+        lang={lang}
+        label={sectionLabel}
+        heading={heading}
+        subheading={subheading}
+      />
 
       <div className="flex flex-col gap-3">
         {links.map((c, i) => (

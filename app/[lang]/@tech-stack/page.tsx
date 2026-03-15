@@ -1,7 +1,7 @@
-import FadeIn from "@/components/fade-in";
-import SectionLabel from "@/components/section-label";
-import { getDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
+import { getDictionary } from "@/lib/dictionaries";
+import FadeIn from "@/components/fade-in";
+import SectionHeader from "@/components/section-header";
 
 export default async function TechStack({
   params,
@@ -14,12 +14,7 @@ export default async function TechStack({
   } = await getDictionary(lang);
   return (
     <>
-      <FadeIn>
-        <SectionLabel text={sectionLabel} />
-        <h2 className="font-dm-sans text-3xl sm:text-4xl font-bold tracking-tight mb-10 text-gray-900 dark:text-gray-50">
-          {heading}
-        </h2>
-      </FadeIn>
+      <SectionHeader lang={lang} label={sectionLabel} heading={heading} />
 
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
         {items.map((t, i) => (

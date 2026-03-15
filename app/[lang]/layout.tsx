@@ -4,6 +4,7 @@ import { getDictionary } from "@/lib/dictionaries";
 import Footer from "@/components/footer";
 import Section from "@/components/section";
 import "../globals.css";
+import CustomCursor from "@/components/custom-cursor";
 
 export async function generateMetadata({
   params,
@@ -42,6 +43,7 @@ export default async function RootLayout({
   workflow,
   quote,
   contact,
+  // timeline
 }: Readonly<{
   params: Promise<{ lang: string }>;
   header?: ReactNode;
@@ -52,6 +54,7 @@ export default async function RootLayout({
   workflow?: ReactNode;
   quote?: ReactNode;
   contact?: ReactNode;
+  // timeline?: ReactNode;
 }>) {
   const { lang } = await params;
   return (
@@ -77,8 +80,10 @@ export default async function RootLayout({
         <Section id="workflow">{workflow}</Section>
         <Section id="quote">{quote}</Section>
         <Section id="contact">{contact}</Section>
+        {/* <Section id="timeline">{timeline}</Section> */}
         <Footer />
       </main>
+      <CustomCursor />
     </>
   );
 }
