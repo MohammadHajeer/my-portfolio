@@ -15,7 +15,7 @@ export default function ThemeSwitcher() {
   if (!mounted)
     return (
       <span className="p-2 rounded-lg transition-colors cursor-not-allowed">
-        <Loader className="size-5 animate-spin" size={16} />
+        <Loader className="animate-spin" size={16} />
       </span>
     );
 

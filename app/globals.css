@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --primary: oklch(60.9% 0.126 221.723);
+}
+
 @theme inline {
   --font-dm-sans: var(--font-dm-sans);
   --font-dm-mono: var(--font-dm-mono);
@@ -9,6 +13,22 @@
 
 html {
   scroll-behavior: smooth;
+}
+html,
+body {
+  cursor: none;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+  outline: 1px solid var(--primary);
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 ::-webkit-scrollbar {
@@ -98,7 +118,7 @@ html {
   display: inline-block;
   width: 3px;
   height: 1.1em;
-  background: #6366f1;
+  background: var(--primary);
   margin-left: 4px;
   vertical-align: middle;
   animation: blink 1s steps(1) infinite;
@@ -147,4 +167,100 @@ html {
   .wf-step::after {
     display: none;
   }
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  15% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-28px) translateX(var(--amp));
+  }
+  85% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-55px) translateX(0);
+  }
+}
+@keyframes orbitRing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes orbitRingR {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes rotateSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkDraw {
+  from {
+    stroke-dashoffset: 30;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dotBlink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+.cv-float {
+  animation: floatY 3s ease-in-out infinite;
+}
+.cv-float.hovered {
+  animation: none;
+}
+.ring1 {
+  animation: orbitRing 5s linear infinite;
+  transform-origin: 50% 50%;
+}
+.ring2 {
+  animation: orbitRingR 8s linear infinite;
+  transform-origin: 50% 50%;
+}
+.spin {
+  animation: rotateSpin 1s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.chk {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: checkDraw 0.35s ease-out 0.05s forwards;
+}
+.d1 {
+  animation: dotBlink 1.2s 0s infinite;
+}
+.d2 {
+  animation: dotBlink 1.2s 0.2s infinite;
+}
+.d3 {
+  animation: dotBlink 1.2s 0.4s infinite;
 }

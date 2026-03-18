@@ -27,7 +27,7 @@ const LangSwitcher: FC<{ currentLang: Locale }> = ({ currentLang }) => {
       aria-label={`Switch to ${targetLabel}`}
       aria-busy={loading}
       className={[
-        "absolute bottom-0 translate-y-[300%] left-1/2 -translate-x-1/2 flex items-center gap-2.5 px-4 py-2 rounded-lg font-mono text-sm transition-all duration-200 select-none w-fit",
+        "relative flex items-center gap-2.5 px-4 py-2 rounded-lg font-mono text-sm transition-all duration-200 select-none w-fit",
         loading
           ? " bg-cyan-600/10 cursor-not-allowed"
           : "bg-white dark:bg-[#111] cursor-pointer",

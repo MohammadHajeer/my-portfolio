@@ -88,24 +88,40 @@
     },
     "items": [
       {
-        "title": "FullStack SaaS Platform",
-        "desc": "Multi-tenant SaaS application with auth, billing, and real-time collaboration. Built for scale with row-level security and background jobs.",
-        "status": "Live"
+        "title": "ASL Learning & Translation Platform",
+        "desc": "Built full-stack platform with Laravel and React (TS), implementing multi-role RBAC; integrated MediaPipe ASL translator with responsive UI; built gamified dashboard with points, PDF certs, and real-time chat using Pusher & MUI Charts.",
+        "tags": [
+          "Laravel",
+          "React (TS)",
+          "Tailwind CSS",
+          "Framer Motion",
+          "MediaPipe",
+          "Pusher",
+          "MUI Charts"
+        ],
+        "status": "Completed",
+        "period": "Feb 2024 – Jun 2024"
       },
       {
-        "title": "API Gateway Service",
-        "desc": "High-performance API gateway handling rate limiting, request routing, and JWT validation. Processes 10k+ req/sec.",
-        "status": "Open Source"
+        "title": "Quran Progress Tracker",
+        "desc": "Built full-stack Quran memorization tracker with Next.js and Appwrite, featuring multi-role RBAC; daily memorization & revision tracker with history and interactive charts using shadcn/ui; teacher dashboard for viewing students’ progress and notifications.",
+        "tags": ["Next.js", "Appwrite", "shadcn/ui", "React", "Tailwind CSS"],
+        "status": "Completed",
+        "period": "Apr 2025 – Aug 2025"
       },
       {
-        "title": "Real-Time Chat App",
-        "desc": "End-to-end encrypted messaging platform with WebSocket rooms, file sharing, and presence indicators.",
-        "status": "Live"
-      },
-      {
-        "title": "Dev Portfolio CMS",
-        "desc": "Headless CMS for developer portfolios with Markdown support, custom themes, and GitHub integration.",
-        "status": "Live"
+        "title": "Smart Attendance System (IoT-based)",
+        "desc": "Built IoT attendance system using Arduino IDE & ESP8266 with React frontend and Node.js backend; developed backend API with Node.js and SQLite to store/manage student attendance records; implemented real-time tracking via WebSockets.",
+        "tags": [
+          "Arduino IDE",
+          "ESP8266",
+          "React",
+          "Node.js",
+          "SQLite",
+          "WebSockets"
+        ],
+        "status": "Completed",
+        "period": "Nov 2025 – Dec 2025"
       }
     ]
   },
@@ -199,7 +215,7 @@
   "Footer": {
     "name": "Mohammad Hajeer",
     "copyright": "All rights reserved",
-    "builtWith": "Built with React & Tailwind",
+    "builtWith": "Built with Next.js & Tailwind",
     "quickLinks": ["GitHub", "LinkedIn", "Email"]
   }
 }

@@ -1,4 +1,3 @@
-// components/custom-cursor.tsx
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -17,6 +16,11 @@ export default function CustomCursor() {
 
   const [state, setState] = useState<CursorState>("default");
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    requestAnimationFrame(() => setMounted(true));
+  }, []);
 
   useEffect(() => {
     // Hide native cursor globally
@@ -111,6 +115,7 @@ export default function CustomCursor() {
   const isHover = state === "hover";
   const isClick = state === "click";
 
+  if (!mounted) return null;
   return (
     <div
       aria-hidden="true"

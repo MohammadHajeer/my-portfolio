@@ -7,6 +7,9 @@ export default async function Header({
   params: Promise<{ lang: "en" | "ar" }>;
 }) {
   const { lang } = await params;
-  const { Navigation } = await getDictionary(lang);
-  return <Navbar links={Navigation} />;
+  const {
+    Navigation,
+    Nav: { hireMe },
+  } = await getDictionary(lang);
+  return <Navbar links={Navigation} lang={lang} hireMe={hireMe} />;
 }

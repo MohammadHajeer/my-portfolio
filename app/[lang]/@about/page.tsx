@@ -1,4 +1,5 @@
 import FadeIn from "@/components/fade-in";
+import HoverGlowCard from "@/components/hover-glow-card";
 import SectionHeader from "@/components/section-header";
 import { SKILLS } from "@/lib/constants";
 import { getDictionary } from "@/lib/dictionaries";
@@ -19,10 +20,20 @@ export default async function About({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <FadeIn delay={100}>
-          <p className="font-dm-sans text-[15px] leading-loose mb-5 text-gray-500 dark:text-gray-400">
-            {paragraphs[0]}{" "}
+          <p
+            className={cn(
+              "text-[15px] leading-loose mb-5 text-gray-500 dark:text-gray-400",
+              lang === "en" && "font-dm-sans",
+            )}
+          >
+            {paragraphs[0]}
           </p>
-          <p className="font-dm-sans text-[15px] leading-loose text-gray-500 dark:text-gray-400">
+          <p
+            className={cn(
+              "text-[15px] leading-loose text-gray-500 dark:text-gray-400",
+              lang === "en" && "font-dm-sans",
+            )}
+          >
             {paragraphs[1]}
           </p>
         </FadeIn>
@@ -30,22 +41,12 @@ export default async function About({
         <FadeIn delay={200}>
           <div className="grid grid-cols-3 gap-3 mb-6">
             {focusAreas.map((f) => (
-              <div
-                key={f.title}
-                className={cn(
-                  "rounded-xl p-4 cursor-default",
-                  "bg-white dark:bg-[#111]",
-                  "border border-gray-200 dark:border-[#1f1f1f]",
-                  "hover:border-cyan-400 dark:hover:border-cyan-500/40",
-                  "hover:-translate-y-1 transition-all duration-200",
-                  "shadow-sm dark:shadow-none",
-                )}
-              >
-                {/* <div className="text-xl mb-2">{f.icon}</div> */}
+              <HoverGlowCard key={f.title} className="p-4">
                 <div
                   className={cn(
-                    "font-dm-sans text-[13px] font-semibold mb-1",
+                    "text-[13px] font-semibold mb-1",
                     "text-gray-800 dark:text-gray-100",
+                    lang === "en" && "font-dm-sans",
                   )}
                 >
                   {f.title}
@@ -58,7 +59,7 @@ export default async function About({
                 >
                   {f.desc}
                 </div>
-              </div>
+              </HoverGlowCard>
             ))}
           </div>
 
@@ -71,7 +72,7 @@ export default async function About({
                   "bg-gray-100 dark:bg-[#111]",
                   "border border-gray-200 dark:border-[#1f1f1f]",
                   "text-gray-500 dark:text-gray-500",
-                  "hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400",
+                  " hover:text-cyan-600 dark:hover:text-cyan-600",
                   "transition-all duration-200",
                 )}
               >

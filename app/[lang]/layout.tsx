@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
-import Footer from "@/components/footer";
 import Section from "@/components/section";
-import "../globals.css";
 import CustomCursor from "@/components/custom-cursor";
+import "../globals.css";
+import CVDownloadButton from "@/components/cv-download-button";
 
 export async function generateMetadata({
   params,
@@ -38,22 +38,24 @@ export default async function RootLayout({
   header,
   children: hero,
   about,
-  techStack,
+  // techStack,
   projects,
   workflow,
   quote,
   contact,
+  footer,
   // timeline
 }: Readonly<{
-  params: Promise<{ lang: string }>;
+  params: Promise<{ lang: "en" | "ar" }>;
   header?: ReactNode;
   children: ReactNode;
   about?: ReactNode;
-  techStack?: ReactNode;
+  // techStack?: ReactNode;
   projects?: ReactNode;
   workflow?: ReactNode;
   quote?: ReactNode;
   contact?: ReactNode;
+  footer?: ReactNode;
   // timeline?: ReactNode;
 }>) {
   const { lang } = await params;
@@ -75,15 +77,16 @@ export default async function RootLayout({
           {hero}
         </section>
         <Section id="about">{about}</Section>
-        <Section id="stack">{techStack}</Section>
+        {/* <Section id="stack">{techStack}</Section> */}
         <Section id="projects">{projects}</Section>
         <Section id="workflow">{workflow}</Section>
         <Section id="quote">{quote}</Section>
         <Section id="contact">{contact}</Section>
         {/* <Section id="timeline">{timeline}</Section> */}
-        <Footer />
+        {footer}
       </main>
       <CustomCursor />
+      {/* <CVDownloadButton lang={lang} cvUrl="/assets/Mohammad_Hajeer.pdf" /> */}
     </>
   );
 }

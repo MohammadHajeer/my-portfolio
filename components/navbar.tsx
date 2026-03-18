@@ -6,9 +6,11 @@ import ThemeSwitcher from "./theme-switcher";
 
 interface NavbarProps {
   links: { id: string; label: string }[];
+  lang?: "en" | "ar";
+  hireMe?: string;
 }
 
-export default function Navbar({ links }: NavbarProps) {
+export default function Navbar({ links, lang, hireMe }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("");
   const scrollTo = (id: string) =>
     document
@@ -71,10 +73,11 @@ export default function Navbar({ links }: NavbarProps) {
           onClick={() => scrollTo("Contact")}
           className={cn(
             "bg-cyan-600 hover:bg-cyan-500 text-white text-xs px-4 py-2 rounded-md",
-            "transition-all duration-200 hover:-translate-y-px font-dm-mono",
+            "transition-all duration-200 hover:-translate-y-px",
+            lang === "en" && "font-dm-mono",
           )}
         >
-          Hire Me
+          {hireMe || "Hire Me"}
         </button>
       </div>
     </nav>

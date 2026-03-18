@@ -15,7 +15,7 @@ export default async function Hero({
     <div
       className={cn(
         "max-w-5xl mx-auto w-full flex items-center justify-between gap-12 py-24",
-        "flex-col-reverse md:flex-row md:gap-20",
+        "flex-col-reverse lg:flex-row md:gap-20",
       )}
     >
       {/* Text */}
@@ -88,6 +88,7 @@ export default async function Hero({
               lang === "en" && "font-dm-mono",
             )}
           />
+          <LangSwitcher currentLang={lang} />
         </div>
 
         <div className="flex flex-wrap gap-10">
@@ -121,10 +122,11 @@ export default async function Hero({
       {/* Photo + geometric decorations */}
       <div className="relative">
         <HeroPhoto
+          lang={lang}
           photoBadge={Hero.photoBadge}
           photoFallback={Hero.photoFallback}
         />
-        <LangSwitcher currentLang={lang} />
+        
       </div>
     </div>
   );
