@@ -33,7 +33,12 @@ export default async function Workflow({
           {steps.map((w) => (
             <div
               key={w.step}
-              className="wf-step flex flex-col items-center gap-2 flex-1 min-w-20 group"
+              className={cn(
+                "wf-step flex flex-col items-center gap-2 flex-1 min-w-20 group",
+                lang === "en"
+                  ? "after:left-[calc(50%+26px)]"
+                  : "after:right-[calc(50%+26px)]",
+              )}
             >
               <span
                 className={cn(

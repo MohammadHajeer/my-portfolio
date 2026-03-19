@@ -51,7 +51,7 @@ export default async function Contact({
                 >
                   {c.icon}
                 </div>
-                <div>
+                <div className="flex-1">
                   <div
                     className={cn(
                       "text-sm font-medium",
@@ -63,7 +63,7 @@ export default async function Contact({
                   </div>
                   <div
                     className={cn(
-                      "text-xs mt-0.5 font-dm-mono",
+                      "text-xs mt-0.5 font-dm-mono max-sm:hidden",
                       "text-gray-400 dark:text-gray-600",
                     )}
                   >

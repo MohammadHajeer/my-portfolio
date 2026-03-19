@@ -193,13 +193,13 @@
         "icon": "in",
         "label": "LinkedIn",
         "sub": "linkedin.com/in/muhammad-hajeer",
-        "href": "https://linkedin.com"
+        "href": "https://www.linkedin.com/in/muhammad-hajeer/"
       },
       {
         "icon": "⑂",
         "label": "GitHub",
         "sub": "github.com/mohammadhajeer",
-        "href": "https://github.com"
+        "href": "https://github.com/mohammadhajeer"
       },
       {
         "icon": "@",
@@ -215,7 +215,6 @@
   "Footer": {
     "name": "Mohammad Hajeer",
     "copyright": "All rights reserved",
-    "builtWith": "Built with Next.js & Tailwind",
-    "quickLinks": ["GitHub", "LinkedIn", "Email"]
+    "builtWith": "Built with Next.js & Tailwind"
   }
 }

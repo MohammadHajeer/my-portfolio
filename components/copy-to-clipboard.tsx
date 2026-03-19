@@ -28,7 +28,7 @@ export default function CopyToClipboard({
     <button
       onClick={copyText}
       className={cn(
-        "text-xs font-dm-mono transition-colors duration-200",
+        "text-xs font-dm-mono transition-colors duration-200 outline-0!",
         lang === "en" ? "ml-auto" : "mr-auto",
         copied
           ? "text-green-500"

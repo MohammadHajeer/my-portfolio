@@ -152,7 +152,7 @@ button:focus {
   content: "";
   position: absolute;
   top: 23px;
-  left: calc(50% + 26px);
+  /* left: calc(50% + 26px); */
   width: calc(100% - 52px);
   height: 1px;
   background: #e5e7eb;

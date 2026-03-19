@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
-import NavLink from "@/components/nav-link";
 
 export default async function Footer({
   params,
@@ -9,50 +8,42 @@ export default async function Footer({
 }) {
   const { lang } = await params;
   const {
-    Footer: { name, builtWith, copyright, quickLinks },
+    Footer: { name, builtWith, copyright },
   } = await getDictionary(lang);
+
+  const isMono = lang === "en";
+
   return (
-    <footer className="py-7 px-6 border-t border-gray-100 dark:border-[#111]">
-      <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+    <footer className="relative py-6 px-6 border-t border-gray-100 dark:border-white/6">
+      {/* Subtle top gradient line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-linear-to-r from-transparent via-gray-300 dark:via-white/10 to-transparent" />
+
+      <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-y-3 gap-x-6">
+        {/* Left: name + copyright */}
+        <div className="flex items-center gap-3">
+          <p className="text-[13px] font-semibold tracking-tight text-gray-800 dark:text-gray-200">
             {name}
           </p>
+          <span className="w-px h-3 bg-gray-200 dark:bg-white/10" />
           <p
             className={cn(
-              "text-[11px] mt-0.5 text-gray-400 dark:text-gray-700",
-              lang === "en" && "font-dm-mono",
+              "text-[11px] text-gray-400 dark:text-gray-600 tabular-nums",
+              isMono && "font-dm-mono",
             )}
           >
             © {new Date().getFullYear()} · {copyright}
           </p>
         </div>
 
+        {/* Right: built with */}
         <p
           className={cn(
-            "text-[11px] tracking-wide text-gray-400 dark:text-gray-700",
-            lang === "en" && "font-dm-mono",
+            "text-[11px] tracking-wide text-gray-400 dark:text-gray-600",
+            isMono && "font-dm-mono",
           )}
         >
           {builtWith}
         </p>
-
-        <div className="flex gap-5">
-          {quickLinks.map((s) => (
-            <NavLink
-              key={s}
-              title={s}
-              section="Contact"
-              className={cn(
-                "text-[12px] tracking-wide",
-                "text-gray-400 dark:text-gray-600",
-                "hover:text-cyan-600 dark:hover:text-cyan-400",
-                "transition-colors bg-transparent border-none cursor-pointer",
-                lang === "en" && "font-dm-mono",
-              )}
-            />
-          ))}
-        </div>
       </div>
     </footer>
   );

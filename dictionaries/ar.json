@@ -197,20 +197,21 @@
     "links": [
       {
         "icon": "in",
-        "label": "لينكد إن",
+        "label": "linkedIn",
         "sub": "linkedin.com/in/muhammad-hajeer",
-        "href": "https://linkedin.com"
+        "href": "https://www.linkedin.com/in/muhammad-hajeer/"
       },
       {
         "icon": "⑂",
-        "label": "جيت هب",
+        "label": "GitHub",
         "sub": "github.com/mohammadhajeer",
-        "href": "https://github.com"
+        "href": "https://github.com/mohammadhajeer"
       },
       {
         "icon": "@",
         "label": "البريد الإلكتروني",
         "sub": "mohammadhajeer002@gmail.com",
+        "href": "mailto:mohammadhajeer002@gmail.com",
         "copyText": "نسخ",
         "copied": "تم النسخ!"
       }
@@ -220,7 +221,6 @@
   "Footer": {
     "name": "محمد حجير",
     "copyright": "جميع الحقوق محفوظة",
-    "builtWith": "بُني باستخدام Next.js و Tailwind",
-    "quickLinks": ["جيت هب", "لينكد إن", "البريد"]
+    "builtWith": "بُني باستخدام Next.js و Tailwind"
   }
 }
