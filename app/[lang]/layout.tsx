@@ -46,7 +46,7 @@ export default async function RootLayout({
   footer,
   // timeline
 }: Readonly<{
-  params: Promise<{ lang: "en" | "ar" }>;
+  params: Promise<{ lang: string }>;
   header?: ReactNode;
   children: ReactNode;
   about?: ReactNode;
