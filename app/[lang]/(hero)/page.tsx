@@ -36,7 +36,7 @@ export default async function Hero({
 
         <h1
           className={cn(
-            "sm:text-5xl lg:text-6xl font-bold",
+            "text-4xl sm:text-5xl lg:text-6xl font-bold",
             "leading-tight tracking-tight mb-5",
             "text-gray-900 dark:text-gray-50",
           )}
