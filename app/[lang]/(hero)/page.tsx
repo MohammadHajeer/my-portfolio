@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, numbersToArabic } from "@/lib/utils";
 import NavLink from "@/components/nav-link";
 import { getDictionary } from "@/lib/dictionaries";
 import HeroPhoto from "@/components/hero-photo";
@@ -92,19 +92,15 @@ export default async function Hero({
         </div>
 
         <div className="flex flex-wrap gap-10">
-          {[
-            ["3+", Hero.stats[0].label],
-            ["15+", Hero.stats[1].label],
-            ["8+", Hero.stats[2].label],
-          ].map(([n, l]) => (
-            <div key={l}>
+          {Hero.stats.map(({ value, label }) => (
+            <div key={label}>
               <div
                 className={cn(
-                  "محمد حجيرtext-2xl font-bold",
+                  "text-2xl font-bold",
                   "text-gray-900 dark:text-gray-50",
                 )}
               >
-                {n}
+                {lang === "en" ? value : numbersToArabic(value)}+
               </div>
               <div
                 className={cn(
@@ -112,7 +108,7 @@ export default async function Hero({
                   "tracking-widest mt-1 uppercase",
                 )}
               >
-                {l}
+                {label}
               </div>
             </div>
           ))}
@@ -126,7 +122,6 @@ export default async function Hero({
           photoBadge={Hero.photoBadge}
           photoFallback={Hero.photoFallback}
         />
-        
       </div>
     </div>
   );

@@ -30,9 +30,9 @@
     "viewProjects": "View Projects →",
     "getInTouch": "Get In Touch",
     "stats": [
-      { "value": "1+", "label": "Years Experience" },
-      { "value": "15+", "label": "Projects Shipped" },
-      { "value": "8+", "label": "Technologies" }
+      { "value": "1", "label": "Years Experience" },
+      { "value": "15", "label": "Projects Shipped" },
+      { "value": "8", "label": "Technologies" }
     ]
   },
 

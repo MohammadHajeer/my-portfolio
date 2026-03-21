@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, numbersToArabic } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
 import FadeIn from "@/components/fade-in";
 import SectionHeader from "@/components/section-header";
@@ -43,10 +43,11 @@ export default async function Workflow({
               <span
                 className={cn(
                   "absolute -top-6 left-1/2 -translate-x-1/2 text-[10px]",
-                  "text-cyan-500 dark:text-cyan-500 font-dm-mono tracking-widest",
+                  "text-cyan-500 dark:text-cyan-500 tracking-widest",
+                  lang === "en" && "font-dm-mono",
                 )}
               >
-                {w.step}
+                {lang === "en" ? w.step : numbersToArabic(w.step)}
               </span>
               <div
                 className={cn(
@@ -82,8 +83,9 @@ export default async function Workflow({
         >
           <span
             className={cn(
-              "text-[11px] font-dm-mono tracking-widest uppercase shrink-0",
+              "text-[11px] tracking-widest uppercase shrink-0",
               "text-gray-400 dark:text-gray-600",
+              lang === "en" && "font-dm-mono",
             )}
           >
             {deliveryLabel}
@@ -98,11 +100,12 @@ export default async function Workflow({
           </div>
           <span
             className={cn(
-              "text-[11px] font-dm-mono shrink-0",
+              "text-[11px] shrink-0",
               "text-cyan-600 dark:text-cyan-400",
+              lang === "en" && "font-dm-mono",
             )}
           >
-            {deliveryValue}
+            {lang === "en" ? deliveryValue : numbersToArabic(deliveryValue)}
           </span>
         </div>
       </FadeIn>

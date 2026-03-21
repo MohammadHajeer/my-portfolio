@@ -10,3 +10,11 @@ export function scrollTo(id: string) {
     .getElementById(id.toLowerCase())
     ?.scrollIntoView({ behavior: "smooth" });
 }
+
+export function numbersToArabic(input: number | string): string {
+  const arabicNumbers = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+
+  return input
+    .toString()
+    .replace(/\d/g, (digit) => arabicNumbers[Number(digit)]);
+}

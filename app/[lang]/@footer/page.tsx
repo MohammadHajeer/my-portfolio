@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils";
+import { cn, numbersToArabic } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
+import { Copyright, Dot } from "lucide-react";
 
 export default async function Footer({
   params,
@@ -11,7 +12,7 @@ export default async function Footer({
     Footer: { name, builtWith, copyright },
   } = await getDictionary(lang);
 
-  const isMono = lang === "en";
+  const year = new Date().getFullYear();
 
   return (
     <footer className="relative py-6 px-6 border-t border-gray-100 dark:border-white/6">
@@ -27,11 +28,14 @@ export default async function Footer({
           <span className="w-px h-3 bg-gray-200 dark:bg-white/10" />
           <p
             className={cn(
-              "text-[11px] text-gray-400 dark:text-gray-600 tabular-nums",
-              isMono && "font-dm-mono",
+              "text-[11px] text-gray-400 dark:text-gray-600 tabular-nums flex items-center gap-1 flex-row-reverse",
+              lang === "en" ? "font-dm-mono" : "",
             )}
           >
-            © {new Date().getFullYear()} · {copyright}
+            <Copyright className="size-3" />{" "}
+            {lang === "en" ? year : numbersToArabic(year)}{" "}
+            <Dot className="size-2" />
+            <span>{copyright}</span>
           </p>
         </div>
 
@@ -39,7 +43,7 @@ export default async function Footer({
         <p
           className={cn(
             "text-[11px] tracking-wide text-gray-400 dark:text-gray-600",
-            isMono && "font-dm-mono",
+            lang === "en" && "font-dm-mono",
           )}
         >
           {builtWith}
