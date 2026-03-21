@@ -13,6 +13,7 @@ export default async function About({
   const { lang } = await params;
   const {
     About: { sectionLabel, heading, paragraphs, focusAreas },
+    
   } = await getDictionary(lang);
   return (
     <>
