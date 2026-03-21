@@ -1,7 +1,8 @@
-import { ThemeProvider } from "@/components/theme-provider";
+import React from "react";
 import { cn } from "@/lib/utils";
 import { DM_Mono, DM_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
-import React from "react";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Metadata } from "next";
 
 const dmMono = DM_Mono({
   variable: "--font-dm-mono",
@@ -18,6 +19,12 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["arabic"],
 });
+
+export const metadata: Metadata = {
+  verification: {
+    google: "gEbPeRBOYIbeVwlIFk64h4DXqVT1RY2_-kQ5Ha737t8",
+  },
+};
 
 export default function RootLayout({
   children,
