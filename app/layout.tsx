@@ -4,6 +4,7 @@ import { DM_Mono, DM_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Metadata } from "next";
 import "./globals.css";
+import { baseUrl } from "@/lib/constants";
 
 const dmMono = DM_Mono({
   variable: "--font-dm-mono",
@@ -32,6 +33,15 @@ export const metadata: Metadata = {
   },
   referrer: "origin-when-cross-origin",
   generator: "Next.js",
+  openGraph: {
+    images: [
+      {
+        url: `${baseUrl}/en-og.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

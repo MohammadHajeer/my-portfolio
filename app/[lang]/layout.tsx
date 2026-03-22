@@ -12,6 +12,10 @@ export async function generateMetadata({
   params: Promise<{ lang: "en" | "ar" }>;
 }): Promise<Metadata> {
   const { lang } = await params;
+  const ogImageUrl =
+    lang === "en"
+      ? `${baseUrl}/assets/en-og.png`
+      : `${baseUrl}/assets/ar-og.png`;
   const {
     Metadata: {
       title,
@@ -35,7 +39,10 @@ export async function generateMetadata({
     creator,
     publisher,
     alternates,
-    openGraph,
+    openGraph: {
+      ...openGraph,
+      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+    },
     twitter,
   };
 }
