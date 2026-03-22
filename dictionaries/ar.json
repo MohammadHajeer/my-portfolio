@@ -2,7 +2,43 @@
   "Metadata": {
     "title": "محمد حجير | مهندس برمجيات",
     "description": "مهندس برمجيات متكامل وخريج علوم حاسوب. أبني تطبيقات ويب قابلة للتوسع من الصفر — واجهات برمجية نظيفة، وواجهات أمامية عالية الأداء، وبنية تحتية متينة.",
-    "ogDescription": "استعرض محفظة محمد حجير. مهندس برمجيات متخصص في Next.js وReact وNode.js وتطوير الويب المتكامل الحديث."
+    "applicationName": "معرض أعمال محمد هجير",
+    "keywords": [
+      "محمد هجير",
+      "مهندس برمجيات",
+      "مطور ويب",
+      "برمجة Full-Stack",
+      "تطبيقات الويب",
+      "Next.js بالعربي"
+    ],
+    "authors": [
+      {
+        "name": "محمد هجير",
+        "url": "https://mohammadhajeer.vercel.app"
+      }
+    ],
+    "creator": "محمد هجير",
+    "publisher": "محمد هجير",
+    "alternates": {
+      "canonical": "https://mohammadhajeer.vercel.app/ar",
+      "languages": {
+        "en-US": "https://mohammadhajeer.vercel.app/en",
+        "ar-SA": "https://mohammadhajeer.vercel.app/ar"
+      }
+    },
+    "openGraph": {
+      "title": "محمد هجير | مهندس برمجيات Full-Stack",
+      "description": "أقوم ببناء منتجات جاهزة للإنتاج بدقة عالية، من تصميم قواعد البيانات إلى تحسين واجهات المستخدم.",
+      "url": "https://mohammadhajeer.vercel.app/ar",
+      "siteName": "معرض أعمال محمد هجير",
+      "locale": "ar_SA",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "محمد هجير | مهندس برمجيات",
+      "description": "متخصص في بناء حلول الويب المتكاملة."
+    }
   },
 
   "Navigation": [

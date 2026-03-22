@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { DM_Mono, DM_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Metadata } from "next";
+import "./globals.css";
 
 const dmMono = DM_Mono({
   variable: "--font-dm-mono",
@@ -24,6 +25,13 @@ export const metadata: Metadata = {
   verification: {
     google: "gEbPeRBOYIbeVwlIFk64h4DXqVT1RY2_-kQ5Ha737t8",
   },
+  formatDetection: {
+    email: true,
+    address: false,
+    telephone: false,
+  },
+  referrer: "origin-when-cross-origin",
+  generator: "Next.js",
 };
 
 export default function RootLayout({

@@ -2,7 +2,43 @@
   "Metadata": {
     "title": "Mohammad Hajeer | Software Engineer",
     "description": "Full-Stack Software Engineer & CS Graduate. I build scalable web applications from the ground up — clean APIs, performant frontends, and solid infrastructure.",
-    "ogDescription": "Explore Mohammad Hajeer's portfolio. Software Engineer specializing in Next.js, React, Node.js, and modern full-stack web development."
+    "applicationName": "Mohammad Hajeer Portfolio",
+    "keywords": [
+      "Mohammad Hajeer",
+      "Software Engineer",
+      "Web Developer",
+      "Full-Stack Development",
+      "Web Applications",
+      "Next.js"
+    ],
+    "authors": [
+      {
+        "name": "Mohammad Hajeer",
+        "url": "https://mohammadhajeer.vercel.app"
+      }
+    ],
+    "creator": "Mohammad Hajeer",
+    "publisher": "Mohammad Hajeer",
+    "alternates": {
+      "canonical": "https://mohammadhajeer.vercel.app/en",
+      "languages": {
+        "en-US": "https://mohammadhajeer.vercel.app/en",
+        "ar-SA": "https://mohammadhajeer.vercel.app/ar"
+      }
+    },
+    "openGraph": {
+      "title": "Mohammad Hajeer | Full-Stack Software Engineer",
+      "description": "I build production-ready products with precision, from database design to optimized user interfaces.",
+      "url": "https://mohammadhajeer.vercel.app/en",
+      "siteName": "Mohammad Hajeer Portfolio",
+      "locale": "en_US",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Mohammad Hajeer | Software Engineer",
+      "description": "Specialized in building complete web solutions."
+    }
   },
 
   "Navigation": [

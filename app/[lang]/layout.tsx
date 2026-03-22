@@ -1,35 +1,42 @@
 import { ReactNode } from "react";
+import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
 import Section from "@/components/section";
 import CustomCursor from "@/components/custom-cursor";
-import "../globals.css";
-import CVDownloadButton from "@/components/cv-download-button";
+import { baseUrl } from "@/lib/constants";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ lang: "en" | "ar" }>;
-}) {
+}): Promise<Metadata> {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
-  return {
-    title: dict.Metadata.title,
-    description: dict.Metadata.description,
-    openGraph: {
-      title: dict.Metadata.title,
-      description: dict.Metadata.ogDescription,
-      url: `https://mohammadhajeer.vercel.app/${lang}`,
-      type: "website",
-      images: [
-        {
-          url: "",
-          width: 1200,
-          height: 630,
-          alt: "Mohammad Hajeer's Portfolio",
-        },
-      ],
+  const {
+    Metadata: {
+      title,
+      description,
+      applicationName,
+      keywords,
+      authors,
+      creator,
+      publisher,
+      alternates,
+      openGraph,
+      twitter,
     },
+  } = await getDictionary(lang);
+  return {
+    title,
+    description,
+    applicationName,
+    keywords,
+    authors,
+    creator,
+    publisher,
+    alternates,
+    openGraph,
+    twitter,
   };
 }
 
