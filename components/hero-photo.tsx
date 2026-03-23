@@ -84,8 +84,9 @@ export default function HeroPhoto({
             className={cn(
               "rounded-full object-cover object-top border-2 border-cyan-500/30",
               "relative z-10 transition-all duration-500 group-hover:scale-[1.02]",
-              "w-52 h-52 sm:w-60 sm:h-60 md:w-68 md:h-68",
+              "w-52 h-52 sm:w-60 sm:h-60 md:w-68 md:h-68 select-none",
             )}
+            priority
           />
 
           <div

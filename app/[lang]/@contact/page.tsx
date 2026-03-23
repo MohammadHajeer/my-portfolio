@@ -46,7 +46,7 @@ export default async function Contact({
                     "w-10 h-10 rounded-lg flex items-center justify-center text-sm shrink-0",
                     "bg-gray-100 dark:bg-[#1a1a1a]",
                     "border border-gray-200 dark:border-[#2a2a2a]",
-                    "text-cyan-600 dark:text-cyan-400",
+                    "text-cyan-600 dark:text-cyan-400 select-none",
                   )}
                 >
                   {c.icon}
@@ -77,7 +77,7 @@ export default async function Contact({
                     className={cn(
                       "text-lg transition-colors duration-200",
                       "text-gray-300 dark:text-gray-700",
-                      "group-hover:text-cyan-500 dark:group-hover:text-cyan-400",
+                      "group-hover:text-cyan-500 dark:group-hover:text-cyan-400 select-none",
                       lang === "ar" && "rotate-180",
                       lang === "en" ? "ml-auto" : "mr-auto",
                     )}

@@ -43,7 +43,7 @@ export default async function Workflow({
               <span
                 className={cn(
                   "absolute -top-6 left-1/2 -translate-x-1/2 text-[10px]",
-                  "text-cyan-500 dark:text-cyan-500 tracking-widest",
+                  "text-cyan-500 dark:text-cyan-500 tracking-widest select-none",
                   lang === "en" && "font-dm-mono",
                 )}
               >
@@ -57,7 +57,7 @@ export default async function Workflow({
                   "group-hover:border-cyan-500",
                   "group-hover:bg-cyan-50 dark:group-hover:bg-cyan-950",
                   "transition-all duration-200",
-                  "shadow-sm dark:shadow-none",
+                  "shadow-sm dark:shadow-none select-none",
                 )}
               >
                 {w.icon}

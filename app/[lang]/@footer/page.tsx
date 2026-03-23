@@ -28,7 +28,7 @@ export default async function Footer({
           <span className="w-px h-3 bg-gray-200 dark:bg-white/10" />
           <p
             className={cn(
-              "text-[11px] text-gray-400 dark:text-gray-600 tabular-nums flex items-center gap-1 flex-row-reverse",
+              "text-[11px] text-gray-400 dark:text-gray-600 tabular-nums flex items-center gap-1 flex-row-reverse select-none",
               lang === "en" ? "font-dm-mono" : "",
             )}
           >

@@ -1,6 +1,6 @@
 "use client";
 
-import { scrollTo } from "@/lib/utils";
+import { cn, scrollTo } from "@/lib/utils";
 
 interface NavLinkProps {
   title: string;
@@ -10,7 +10,10 @@ interface NavLinkProps {
 
 export default function NavLink({ title, section, className }: NavLinkProps) {
   return (
-    <button onClick={() => scrollTo(section)} className={className}>
+    <button
+      onClick={() => scrollTo(section)}
+      className={cn("select-none", className)}
+    >
       {title}
     </button>
   );
