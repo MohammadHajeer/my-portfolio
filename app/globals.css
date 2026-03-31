@@ -2,10 +2,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --primary: oklch(60.9% 0.126 221.723);
+  --primary: oklch(61.365% 0.11594 224.666);
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+
+
   --font-dm-sans: var(--font-dm-sans);
   --font-dm-mono: var(--font-dm-mono);
   --font-ibm-plex-arabic: var(--font-ibm-plex-arabic);

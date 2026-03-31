@@ -1,8 +1,7 @@
 import { cn, numbersToArabic } from "@/lib/utils";
 import NavLink from "@/components/nav-link";
 import { getDictionary } from "@/lib/dictionaries";
-import HeroPhoto from "@/components/hero-photo";
-import LangSwitcher from "@/components/lang-switcher";
+import { HeroPhoto, LangSwitcher } from "@/components";
 
 export default async function Hero({
   params,
