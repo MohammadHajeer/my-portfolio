@@ -14,22 +14,22 @@
     "authors": [
       {
         "name": "Mohammad Hajeer",
-        "url": "https://mohammadhajeer.vercel.app"
+        "url": "https://mohammadhajeer.com"
       }
     ],
     "creator": "Mohammad Hajeer",
     "publisher": "Mohammad Hajeer",
     "alternates": {
-      "canonical": "https://mohammadhajeer.vercel.app/en",
+      "canonical": "https://mohammadhajeer.com/en",
       "languages": {
-        "en-US": "https://mohammadhajeer.vercel.app/en",
-        "ar-SA": "https://mohammadhajeer.vercel.app/ar"
+        "en-US": "https://mohammadhajeer.com/en",
+        "ar-SA": "https://mohammadhajeer.com/ar"
       }
     },
     "openGraph": {
       "title": "Mohammad Hajeer | Full-Stack Software Engineer",
       "description": "I build production-ready products with precision, from database design to optimized user interfaces.",
-      "url": "https://mohammadhajeer.vercel.app/en",
+      "url": "https://mohammadhajeer.com/en",
       "siteName": "Mohammad Hajeer Portfolio",
       "locale": "en_US",
       "type": "website"

@@ -14,22 +14,22 @@
     "authors": [
       {
         "name": "محمد هجير",
-        "url": "https://mohammadhajeer.vercel.app"
+        "url": "https://mohammadhajeer.com"
       }
     ],
     "creator": "محمد هجير",
     "publisher": "محمد هجير",
     "alternates": {
-      "canonical": "https://mohammadhajeer.vercel.app/ar",
+      "canonical": "https://mohammadhajeer.com/ar",
       "languages": {
-        "en-US": "https://mohammadhajeer.vercel.app/en",
-        "ar-SA": "https://mohammadhajeer.vercel.app/ar"
+        "en-US": "https://mohammadhajeer.com/en",
+        "ar-SA": "https://mohammadhajeer.com/ar"
       }
     },
     "openGraph": {
       "title": "محمد هجير | مهندس برمجيات Full-Stack",
       "description": "أقوم ببناء منتجات جاهزة للإنتاج بدقة عالية، من تصميم قواعد البيانات إلى تحسين واجهات المستخدم.",
-      "url": "https://mohammadhajeer.vercel.app/ar",
+      "url": "https://mohammadhajeer.com/ar",
       "siteName": "معرض أعمال محمد هجير",
       "locale": "ar_SA",
       "type": "website"

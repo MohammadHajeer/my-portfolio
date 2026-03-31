@@ -1,4 +1,4 @@
-export const baseUrl = "https://mohammadhajeer.vercel.app";
+export const baseUrl = "https://mohammadhajeer.com";
 
 export const SKILLS = [
   "JavaScript",
