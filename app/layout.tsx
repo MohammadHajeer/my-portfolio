@@ -23,6 +23,7 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   verification: {
     google: "gEbPeRBOYIbeVwlIFk64h4DXqVT1RY2_-kQ5Ha737t8",
   },
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   generator: "Next.js",
   openGraph: {
+    siteName: "Mohammad Hajeer's Portfolio",
     images: [
       {
         url: `${baseUrl}/assets/en-og.png`,
