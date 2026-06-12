@@ -1,4 +1,4 @@
-# 🧑‍💻 Ahmad Al-Rashid — Developer Portfolio
+# 🧑‍💻 Mohammad Hajeer — Developer Portfolio
 
 A modern, fully responsive developer portfolio built with **React** and **Tailwind CSS**. Features a clean dark/light mode toggle, smooth scroll animations, and a professional developer aesthetic inspired by tools like Supabase and Linear.
 
@@ -95,7 +95,7 @@ module.exports = {
 }
 
 # 3. Run your dev server
-npm run dev
+pnpm dev
 ```
 
 ### Tailwind Dark Mode Config
@@ -139,10 +139,10 @@ Search for these strings in `portfolio.jsx` and replace:
 
 | Placeholder | Replace with |
 |-------------|-------------|
-| `Ahmad Al-Rashid` | Your full name |
-| `hello@ahmadalrashid.dev` | Your email address |
-| `linkedin.com/in/ahmad-alrashid` | Your LinkedIn URL |
-| `github.com/ahmad-dev` | Your GitHub URL |
+| `Mohammad Hajeer` | Your full name |
+| `mohammadhajeer002@gmail.com` | Your email address |
+| `linkedin.com/in/muhammad-hajeer` | Your LinkedIn URL |
+| `github.com/MohammadHajeer` | Your GitHub URL |
 | `Software Engineer · Full-Stack Web Developer · CS Graduate` | Your title |
 
 ### Projects

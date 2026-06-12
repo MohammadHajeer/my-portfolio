@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
+import { Logo } from "./logo";
 
 interface NavbarProps {
   links: { id: string; label: string }[];
@@ -40,15 +41,7 @@ function Navbar({ links, lang, hireMe }: NavbarProps) {
         "border-b border-gray-200 dark:border-[#1a1a1a]",
       )}
     >
-      <span
-        className={cn(
-          "text-cyan-600 dark:text-cyan-500 font-medium text-sm tracking-wider font-dm-mono",
-        )}
-      >
-        {"<"}
-        <span className={cn("text-gray-800 dark:text-gray-200")}>dev</span>
-        {"/>"}
-      </span>
+      <Logo lang={lang} />
 
       <div className={cn("flex items-center gap-5")}>
         {links.map((l) => (
