@@ -9,7 +9,7 @@ interface HoverGlowCardProps {
   onClick?: () => void;
 }
 
-export default function HoverGlowCard({
+function HoverGlowCard({
   children,
   className,
   glowClassName,
@@ -44,3 +44,5 @@ export default function HoverGlowCard({
     </div>
   );
 }
+
+export { HoverGlowCard };

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import ThemeSwitcher from "./theme-switcher";
+import { ThemeSwitcher } from "./theme-switcher";
 
 interface NavbarProps {
   links: { id: string; label: string }[];
@@ -10,7 +10,7 @@ interface NavbarProps {
   hireMe?: string;
 }
 
-export default function Navbar({ links, lang, hireMe }: NavbarProps) {
+function Navbar({ links, lang, hireMe }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("");
   const scrollTo = (id: string) =>
     document
@@ -83,3 +83,5 @@ export default function Navbar({ links, lang, hireMe }: NavbarProps) {
     </nav>
   );
 }
+
+export { Navbar };

@@ -7,10 +7,7 @@ interface HeroPhotoProps {
   lang?: "en" | "ar";
 }
 
-export default function HeroPhoto({
-  photoFallback,
-  photoBadge,
-}: HeroPhotoProps) {
+function HeroPhoto({ photoFallback, photoBadge }: HeroPhotoProps) {
   return (
     <div className="size-full max-w-110 h-110 flex items-center justify-center overflow-hidden">
       <div
@@ -123,3 +120,5 @@ export default function HeroPhoto({
     </div>
   );
 }
+
+export { HeroPhoto };

@@ -8,10 +8,7 @@ interface CopyToClipboardProps {
   lang?: "en" | "ar";
 }
 
-export default function CopyToClipboard({
-  text,
-  lang = "en",
-}: CopyToClipboardProps) {
+function CopyToClipboard({ text, lang = "en" }: CopyToClipboardProps) {
   const [copied, setCopied] = useState(false);
   const copyText = (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
@@ -39,3 +36,5 @@ export default function CopyToClipboard({
     </button>
   );
 }
+
+export { CopyToClipboard };

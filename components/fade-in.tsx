@@ -1,6 +1,6 @@
 "use client";
 
-import useInView from "./use-in-view";
+import { useInView } from "./use-in-view";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -8,11 +8,7 @@ interface FadeInProps {
   className?: string;
 }
 
-export default function FadeIn({
-  children,
-  delay = 0,
-  className = "",
-}: FadeInProps) {
+function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
   const [ref, visible] = useInView();
   return (
     <div
@@ -28,3 +24,5 @@ export default function FadeIn({
     </div>
   );
 }
+
+export { FadeIn };

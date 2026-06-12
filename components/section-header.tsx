@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import FadeIn from "./fade-in";
+import { FadeIn } from "./fade-in";
 
 interface SectionHeaderProps {
   heading: string;
@@ -8,7 +8,7 @@ interface SectionHeaderProps {
   lang?: "en" | "ar";
 }
 
-export default function SectionHeader({
+function SectionHeader({
   heading,
   label,
   subheading,
@@ -40,3 +40,5 @@ export default function SectionHeader({
     </FadeIn>
   );
 }
+
+export { SectionHeader };

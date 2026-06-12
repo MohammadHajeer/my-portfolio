@@ -2,9 +2,8 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
-import Section from "@/components/section";
-import CustomCursor from "@/components/custom-cursor";
 import { baseUrl } from "@/lib/constants";
+import { CustomCursor, Section } from "@/components";
 
 export async function generateMetadata({
   params,

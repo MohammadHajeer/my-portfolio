@@ -2,13 +2,13 @@
 
 import { PROJECTS } from "@/lib/constants";
 import { useEffect, useState } from "react";
-import FadeIn from "./fade-in";
-import ProjectCard from "./project-card";
-import ProjectPreviewModal from "./project-preview-modal";
+import { FadeIn } from "./fade-in";
+import { ProjectCard } from "./project-card";
+import { ProjectPreviewModal } from "./project-preview-modal";
 
 type Project = (typeof PROJECTS)[number] & { images?: string[] };
 
-export default function ProjectsGroup({
+function ProjectsGroup({
   projects,
   lang = "en",
 }: {
@@ -53,3 +53,5 @@ export default function ProjectsGroup({
     </>
   );
 }
+
+export { ProjectsGroup };

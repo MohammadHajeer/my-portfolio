@@ -1,7 +1,6 @@
 import { cn, numbersToArabic } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
-import FadeIn from "@/components/fade-in";
-import SectionHeader from "@/components/section-header";
+import { FadeIn, SectionHeader } from "@/components";
 
 export default async function Workflow({
   params,

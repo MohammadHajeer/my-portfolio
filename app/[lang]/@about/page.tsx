@@ -1,9 +1,7 @@
-import FadeIn from "@/components/fade-in";
-import HoverGlowCard from "@/components/hover-glow-card";
-import SectionHeader from "@/components/section-header";
+import { cn } from "@/lib/utils";
 import { SKILLS } from "@/lib/constants";
 import { getDictionary } from "@/lib/dictionaries";
-import { cn } from "@/lib/utils";
+import { FadeIn, HoverGlowCard, SectionHeader } from "@/components";
 
 export default async function About({
   params,
@@ -13,7 +11,6 @@ export default async function About({
   const { lang } = await params;
   const {
     About: { sectionLabel, heading, paragraphs, focusAreas },
-    
   } = await getDictionary(lang);
   return (
     <>

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import HoverGlowCard from "./hover-glow-card";
+import { HoverGlowCard } from "./hover-glow-card";
 
 type StatusVariant = "Completed" | "In Progress" | "Archived" | (string & {});
 
@@ -31,7 +31,7 @@ interface ProjectCardProps {
   onClick?: () => void;
 }
 
-export default function ProjectCard({
+function ProjectCard({
   title,
   desc,
   status,
@@ -119,3 +119,5 @@ export default function ProjectCard({
     </HoverGlowCard>
   );
 }
+
+export { ProjectCard };

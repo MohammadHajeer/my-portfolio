@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 type CursorState = "default" | "hover" | "click";
 
-export default function CustomCursor() {
+function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const trailRef = useRef<HTMLDivElement>(null);
@@ -179,3 +179,5 @@ export default function CustomCursor() {
     </div>
   );
 }
+
+export { CustomCursor };

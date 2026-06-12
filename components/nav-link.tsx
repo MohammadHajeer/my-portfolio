@@ -8,7 +8,7 @@ interface NavLinkProps {
   className?: string;
 }
 
-export default function NavLink({ title, section, className }: NavLinkProps) {
+function NavLink({ title, section, className }: NavLinkProps) {
   return (
     <button
       onClick={() => scrollTo(section)}
@@ -18,3 +18,5 @@ export default function NavLink({ title, section, className }: NavLinkProps) {
     </button>
   );
 }
+
+export { NavLink };

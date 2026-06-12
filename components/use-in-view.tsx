@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, RefObject } from "react";
 
-export default function useInView(
+function useInView(
   threshold = 0.12,
 ): [RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -25,3 +25,5 @@ export default function useInView(
 
   return [ref, visible];
 }
+
+export { useInView };

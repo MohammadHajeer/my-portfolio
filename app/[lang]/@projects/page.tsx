@@ -1,5 +1,4 @@
-import SectionHeader from "@/components/section-header";
-import ProjectsGroup from "@/components/projects-group";
+import { ProjectsGroup, SectionHeader } from "@/components";
 import { getDictionary } from "@/lib/dictionaries";
 
 export default async function Projects({

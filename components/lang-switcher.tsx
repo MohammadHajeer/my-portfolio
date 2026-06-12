@@ -22,6 +22,7 @@ const LangSwitcher: FC<{ currentLang: Locale }> = ({ currentLang }) => {
 
   return (
     <Link
+      replace
       href={`/${targetLocale}`}
       onClick={handleClick}
       aria-label={`Switch to ${targetLabel}`}
@@ -60,7 +61,7 @@ const LangSwitcher: FC<{ currentLang: Locale }> = ({ currentLang }) => {
   );
 };
 
-export default LangSwitcher;
+export { LangSwitcher };
 
 const Dot: FC<{ delay: string }> = ({ delay }) => (
   <span

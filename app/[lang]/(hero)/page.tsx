@@ -1,5 +1,5 @@
 import { cn, numbersToArabic } from "@/lib/utils";
-import NavLink from "@/components/nav-link";
+import { NavLink } from "@/components/nav-link";
 import { getDictionary } from "@/lib/dictionaries";
 import { HeroPhoto, LangSwitcher } from "@/components";
 

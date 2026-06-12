@@ -52,10 +52,7 @@ interface CVDownloadButtonProps {
   cvUrl?: string;
 }
 
-export default function CVDownloadButton({
-  lang = "en",
-  cvUrl = "#",
-}: CVDownloadButtonProps) {
+function CVDownloadButton({ lang = "en", cvUrl = "#" }: CVDownloadButtonProps) {
   const t = content[lang] || content.en;
   const [phase, setPhase] = useState("idle");
   const [hovered, setHovered] = useState(false);
@@ -317,3 +314,5 @@ export default function CVDownloadButton({
     </>
   );
 }
+
+export { CVDownloadButton };

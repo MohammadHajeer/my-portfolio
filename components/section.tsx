@@ -7,7 +7,7 @@ interface SectionProps {
   containerClassName?: string;
 }
 
-export default function Section({
+function Section({
   id,
   children,
   className,
@@ -27,3 +27,5 @@ export default function Section({
     </section>
   );
 }
+
+export { Section };

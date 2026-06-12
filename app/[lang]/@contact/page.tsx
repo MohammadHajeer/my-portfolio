@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionaries";
-import FadeIn from "@/components/fade-in";
-import CopyToClipboard from "@/components/copy-to-clipboard";
-import SectionHeader from "@/components/section-header";
-import HoverGlowCard from "@/components/hover-glow-card";
+import {
+  CopyToClipboard,
+  FadeIn,
+  HoverGlowCard,
+  SectionHeader,
+} from "@/components";
 
 export default async function Contact({
   params,
@@ -26,21 +28,18 @@ export default async function Contact({
       <div className="flex flex-col gap-3">
         {links.map((c, i) => (
           <FadeIn key={c.label} delay={i * 80}>
-            <a
-              href={c.href}
-              target="_blank"
-              rel="noreferrer"
-            
-            >
-              <HoverGlowCard   className={cn(
-                "flex items-center gap-4 px-5 py-4 rounded-lg no-underline group relative ",
-                "bg-white dark:bg-[#111]",
-                "border border-gray-200 dark:border-[#1f1f1f]",
-                "text-gray-800 dark:text-gray-200",
-                "hover:border-cyan-500",
-                "transition-all duration-200",
-                "shadow-sm dark:shadow-none",
-              )}>
+            <a href={c.href} target="_blank" rel="noreferrer">
+              <HoverGlowCard
+                className={cn(
+                  "flex items-center gap-4 px-5 py-4 rounded-lg no-underline group relative ",
+                  "bg-white dark:bg-[#111]",
+                  "border border-gray-200 dark:border-[#1f1f1f]",
+                  "text-gray-800 dark:text-gray-200",
+                  "hover:border-cyan-500",
+                  "transition-all duration-200",
+                  "shadow-sm dark:shadow-none",
+                )}
+              >
                 <div
                   className={cn(
                     "w-10 h-10 rounded-lg flex items-center justify-center text-sm shrink-0",

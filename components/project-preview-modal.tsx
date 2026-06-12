@@ -12,7 +12,7 @@ interface ProjectPreviewModalProps {
   onClose?: () => void;
 }
 
-export default function ProjectPreviewModal({
+function ProjectPreviewModal({
   title,
   desc,
   tags,
@@ -249,3 +249,5 @@ export default function ProjectPreviewModal({
     </div>
   );
 }
+
+export { ProjectPreviewModal };
