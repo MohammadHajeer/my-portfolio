@@ -46,7 +46,7 @@ function Logo({ lang = "en" }: LogoProps) {
     lineHeight: isArabic ? 1.4 : undefined,
   });
 
-  const baseClassName = `text-4xl md:text-2xl font-black text-transparent select-none ${
+  const baseClassName = `text-4xl max-lg:text-xl font-black text-transparent select-none ${
     isArabic ? "normal-case" : "uppercase tracking-widest"
   }`;
 

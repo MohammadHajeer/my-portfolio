@@ -49,7 +49,7 @@ function Navbar({ links, lang, hireMe }: NavbarProps) {
             key={l.id}
             onClick={() => scrollTo(l.id)}
             className={cn(
-              "hidden sm:block text-xs tracking-widest transition-colors duration-200",
+              "hidden md:block text-xs tracking-widest transition-colors duration-200",
               activeSection === l.id.toLowerCase()
                 ? "text-cyan-600 dark:text-cyan-400"
                 : "text-gray-400 dark:text-gray-500 hover:text-cyan-600 dark:hover:text-cyan-400",
