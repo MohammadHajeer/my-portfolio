@@ -1,4 +1,4 @@
-# 🧑‍💻 Mohammad Hajeer — Developer Portfolio
+# Mohammad Hajeer — Developer Portfolio
 
 A modern, fully responsive developer portfolio built with **React** and **Tailwind CSS**. Features a clean dark/light mode toggle, smooth scroll animations, and a professional developer aesthetic inspired by tools like Supabase and Linear.
 
