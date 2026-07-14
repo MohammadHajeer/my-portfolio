@@ -1,4 +1,4 @@
-# 🧑‍💻 Mohammad Hajeer — Developer Portfolio
+# Mohammad Hajeer — Developer Portfolio
 
 A modern, fully responsive developer portfolio built with **React** and **Tailwind CSS**. Features a clean dark/light mode toggle, smooth scroll animations, and a professional developer aesthetic inspired by tools like Supabase and Linear.
 
@@ -72,65 +72,6 @@ README.md       ← This file
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- A React project with Tailwind CSS configured
-
-### Installation
-
-```bash
-# 1. Copy portfolio.jsx into your project
-cp portfolio.jsx src/pages/index.jsx   # or wherever your entry point is
-
-# 2. Make sure Tailwind is set up with darkMode: 'class'
-# tailwind.config.js
-module.exports = {
-  darkMode: 'class',
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  theme: { extend: {} },
-  plugins: [],
-}
-
-# 3. Run your dev server
-pnpm dev
-```
-
-### Tailwind Dark Mode Config
-
-This portfolio uses **class-based** dark mode. Make sure your `tailwind.config.js` has:
-
-```js
-module.exports = {
-  darkMode: 'class',   // ← required
-  // ...
-}
-```
-
-The component manages the `dark` class internally on its root wrapper — no extra configuration needed.
-
----
-
-## 🖼️ Replacing the Profile Photo
-
-The hero section loads a placeholder image from Unsplash. To use your own photo:
-
-```jsx
-// Find this line in portfolio.jsx:
-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=440&h=440&fit=crop&crop=face"
-
-// Replace with your own image URL or local path:
-src="/images/your-photo.jpg"
-// or
-src="https://your-cdn.com/photo.jpg"
-```
-
-The image is cropped to a circle (`rounded-full`, `object-cover`, `object-top`) — works best with a portrait/headshot photo.
-
----
-
 ## ✏️ Customization
 
 ### Personal Info
@@ -144,22 +85,6 @@ Search for these strings in `portfolio.jsx` and replace:
 | `linkedin.com/in/muhammad-hajeer` | Your LinkedIn URL |
 | `github.com/MohammadHajeer` | Your GitHub URL |
 | `Software Engineer · Full-Stack Web Developer · CS Graduate` | Your title |
-
-### Projects
-
-Edit the `PROJECTS` array at the top of the file:
-
-```js
-const PROJECTS = [
-  {
-    title: "Your Project Name",
-    desc:  "Short description of what it does and the problem it solves.",
-    tags:  ["React", "Node.js", "PostgreSQL"],
-    status: "Live",   // "Live" | "Open Source" | "In Progress" | "Archived"
-  },
-  // ...
-];
-```
 
 ### Tech Stack
 
