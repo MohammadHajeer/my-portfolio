@@ -7,16 +7,31 @@ import { useCallback, useEffect, useState } from "react";
 interface ProjectPreviewModalProps {
   title: string;
   desc: string;
+  details?: string;
+  features?: string[];
   tags: string[];
-  images: string[];
+  images: { src: string; alt: string }[];
+  labels: {
+    close: string;
+    previous: string;
+    next: string;
+    viewImage: string;
+    detailedDescription: string;
+    keyFeatures: string;
+  };
+  lang?: "en" | "ar";
   onClose?: () => void;
 }
 
 function ProjectPreviewModal({
   title,
   desc,
+  details,
+  features,
   tags,
   images,
+  labels,
+  lang = "en",
   onClose,
 }: ProjectPreviewModalProps) {
   const [activeImg, setActiveImg] = useState(0);
@@ -46,8 +61,9 @@ function ProjectPreviewModal({
       onClick={close}
     >
       <div
+        dir={lang === "ar" ? "rtl" : "ltr"}
         className={cn(
-          "relative w-full max-w-3xl rounded-2xl overflow-hidden",
+          "relative w-full max-w-4xl max-h-[calc(100vh-2rem)] rounded-2xl overflow-y-auto",
           "bg-white dark:bg-[#0e0e0e]",
           "border border-gray-200 dark:border-[#222]",
           "shadow-2xl",
@@ -58,10 +74,10 @@ function ProjectPreviewModal({
         {/* Header */}
         <div className="flex items-start justify-between gap-4 px-6 pt-6 pb-4 border-b border-gray-100 dark:border-[#1a1a1a]">
           <div>
-            <h2 className="font-dm-sans text-lg font-semibold text-gray-900 dark:text-gray-50">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
               {title}
             </h2>
-            <p className="font-dm-sans text-[13px] text-gray-500 dark:text-gray-400 mt-0.5">
+            <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 mt-0.5">
               {desc}
             </p>
           </div>
@@ -73,7 +89,7 @@ function ProjectPreviewModal({
               "bg-gray-100 dark:bg-[#1a1a1a] hover:bg-gray-200 dark:hover:bg-[#252525]",
               "transition-colors duration-150",
             )}
-            aria-label="Close"
+            aria-label={labels.close}
           >
             <svg
               width="14"
@@ -93,14 +109,14 @@ function ProjectPreviewModal({
         {images.length > 0 ? (
           <>
             {/* Main image */}
-            <div className="relative bg-gray-50 dark:bg-[#0a0a0a] aspect-video overflow-hidden">
+            <div className="relative bg-gray-50 dark:bg-[#0a0a0a] aspect-[2/1] overflow-hidden">
               <Image
-                width={100}
-                height={100}
+                fill
+                sizes="(max-width: 768px) 100vw, 896px"
                 key={activeImg}
-                src={images[activeImg]}
-                alt={`${title} screenshot ${activeImg + 1}`}
-                className="w-full h-full object-cover animate-in fade-in duration-300"
+                src={images[activeImg].src}
+                alt={images[activeImg].alt}
+                className="object-contain animate-in fade-in duration-300"
               />
 
               {/* Prev / Next arrows */}
@@ -110,7 +126,7 @@ function ProjectPreviewModal({
                     onClick={() => setActiveImg((i) => Math.max(i - 1, 0))}
                     disabled={activeImg === 0}
                     className={cn(
-                      "absolute left-3 top-1/2 -translate-y-1/2",
+                      "absolute start-3 top-1/2 -translate-y-1/2",
                       "w-9 h-9 rounded-full flex items-center justify-center",
                       "bg-white/80 dark:bg-black/60 backdrop-blur-sm",
                       "border border-gray-200 dark:border-white/10",
@@ -118,7 +134,7 @@ function ProjectPreviewModal({
                       "disabled:opacity-25 hover:bg-white dark:hover:bg-black/80",
                       "transition-all duration-150 shadow-sm",
                     )}
-                    aria-label="Previous image"
+                    aria-label={labels.previous}
                   >
                     <svg
                       width="14"
@@ -130,7 +146,10 @@ function ProjectPreviewModal({
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M9 1L3 7l6 6" />
+                      <path
+                        className="rtl:rotate-180 origin-center"
+                        d="M9 1L3 7l6 6"
+                      />
                     </svg>
                   </button>
                   <button
@@ -139,7 +158,7 @@ function ProjectPreviewModal({
                     }
                     disabled={activeImg === images.length - 1}
                     className={cn(
-                      "absolute right-3 top-1/2 -translate-y-1/2",
+                      "absolute end-3 top-1/2 -translate-y-1/2",
                       "w-9 h-9 rounded-full flex items-center justify-center",
                       "bg-white/80 dark:bg-black/60 backdrop-blur-sm",
                       "border border-gray-200 dark:border-white/10",
@@ -147,7 +166,7 @@ function ProjectPreviewModal({
                       "disabled:opacity-25 hover:bg-white dark:hover:bg-black/80",
                       "transition-all duration-150 shadow-sm",
                     )}
-                    aria-label="Next image"
+                    aria-label={labels.next}
                   >
                     <svg
                       width="14"
@@ -159,14 +178,17 @@ function ProjectPreviewModal({
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M5 1l6 6-6 6" />
+                      <path
+                        className="rtl:rotate-180 origin-center"
+                        d="M5 1l6 6-6 6"
+                      />
                     </svg>
                   </button>
 
                   {/* Counter pill */}
                   <span
                     className={cn(
-                      "absolute bottom-3 right-3",
+                      "absolute bottom-3 end-3",
                       "text-[11px] font-dm-mono tracking-wider",
                       "px-2.5 py-1 rounded-full",
                       "bg-black/40 text-white/90 backdrop-blur-sm",
@@ -181,7 +203,7 @@ function ProjectPreviewModal({
             {/* Thumbnail strip */}
             {images.length > 1 && (
               <div className="flex gap-2 px-6 py-4 overflow-x-auto border-t border-gray-100 dark:border-[#1a1a1a]">
-                {images.map((src, idx) => (
+                {images.map((image, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImg(idx)}
@@ -192,14 +214,17 @@ function ProjectPreviewModal({
                         ? "border-cyan-400 dark:border-cyan-500 opacity-100"
                         : "border-transparent opacity-50 hover:opacity-80",
                     )}
-                    aria-label={`View image ${idx + 1}`}
+                    aria-label={labels.viewImage.replace(
+                      "{count}",
+                      String(idx + 1),
+                    )}
                   >
                     <Image
-                      width={100}
-                      height={100}
-                      src={src}
-                      alt=""
-                      className="w-full h-full object-cover"
+                      width={160}
+                      height={80}
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-contain"
                     />
                   </button>
                 ))}
@@ -226,6 +251,33 @@ function ProjectPreviewModal({
             {/* <p className="font-dm-mono text-[12px] tracking-widest uppercase">
               No images yet
             </p> */}
+          </div>
+        )}
+
+        {(details || (features && features.length > 0)) && (
+          <div className="grid gap-5 px-6 py-5 border-t border-gray-100 dark:border-[#1a1a1a] md:grid-cols-2">
+            {details && (
+              <section>
+                <h3 className="mb-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
+                  {labels.detailedDescription}
+                </h3>
+                <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
+                  {details}
+                </p>
+              </section>
+            )}
+            {features && features.length > 0 && (
+              <section>
+                <h3 className="mb-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
+                  {labels.keyFeatures}
+                </h3>
+                <ul className="list-disc space-y-1.5 ps-5 text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
+                  {features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
         )}
 

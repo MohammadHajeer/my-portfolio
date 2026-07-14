@@ -122,6 +122,15 @@
       "In Progress": "In Progress",
       "Archived": "Archived"
     },
+    "gallery": {
+      "imageCount": "{count} screenshots",
+      "close": "Close project preview",
+      "previous": "Previous image",
+      "next": "Next image",
+      "viewImage": "View image {count}",
+      "detailedDescription": "About the project",
+      "keyFeatures": "Key features"
+    },
     "items": [
       {
         "title": "ASL Learning & Translation Platform",
@@ -158,6 +167,62 @@
         ],
         "status": "Completed",
         "period": "Nov 2025 – Dec 2025"
+      },
+      {
+        "title": "RestoManager",
+        "desc": "A full-stack restaurant management and food-ordering platform connecting customers, restaurant owners, and administrators.",
+        "details": "RestoManager is a MERN Stack platform where restaurant owners can register their businesses, manage restaurant profiles, opening hours, categories, menu items, and customer orders. Customers can explore approved restaurants, browse menus, customize items, manage their cart, and track their orders. Administrators review restaurant applications and manage restaurant statuses.",
+        "features": [
+          "Multi-role authentication and authorization for customers, restaurant owners, and administrators",
+          "Restaurant registration with logo, banner, and verification document uploads",
+          "Admin restaurant approval, rejection, suspension, and status management",
+          "Owner dashboard for managing restaurant information, opening hours, categories, and menu items",
+          "Public restaurant discovery with search and filtering",
+          "Customer cart and ordering workflow",
+          "Kitchen order management with drag-and-drop status updates",
+          "Responsive user interface for desktop and mobile",
+          "Server-state caching and synchronization using TanStack Query",
+          "Form validation using React Hook Form and Zod"
+        ],
+        "tags": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "Mongoose",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "TanStack Query",
+          "Zustand",
+          "React Hook Form",
+          "Zod",
+          "Supabase",
+          "Better Auth"
+        ],
+        "status": "Completed",
+        "images": [
+          {
+            "src": "/assets/resto-manager/landscape.webp",
+            "alt": "RestoManager landing page showing customer discovery, owner workspace, and administrator review interfaces"
+          },
+          {
+            "src": "/assets/resto-manager/restaurant-registration.webp",
+            "alt": "RestoManager four-step restaurant partner registration form"
+          },
+          {
+            "src": "/assets/resto-manager/admin-restaurant-review.webp",
+            "alt": "RestoManager administrator restaurant review screen with verification document preview"
+          },
+          {
+            "src": "/assets/resto-manager/admin-overview.webp",
+            "alt": "RestoManager administrator overview dashboard with restaurant, customer, and order metrics"
+          },
+          {
+            "src": "/assets/resto-manager/restaurant-kitchen.webp",
+            "alt": "RestoManager kitchen live view with draggable columns for new, preparing, and ready orders"
+          }
+        ]
       }
     ]
   },

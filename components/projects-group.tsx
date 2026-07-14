@@ -1,18 +1,43 @@
 "use client";
 
-import { PROJECTS } from "@/lib/constants";
 import { useEffect, useState } from "react";
 import { FadeIn } from "./fade-in";
 import { ProjectCard } from "./project-card";
 import { ProjectPreviewModal } from "./project-preview-modal";
 
-type Project = (typeof PROJECTS)[number] & { images?: string[] };
+interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
+interface Project {
+  title: string;
+  desc: string;
+  details?: string;
+  features?: string[];
+  tags: string[];
+  status: string;
+  period?: string;
+  images?: ProjectImage[];
+}
+
+interface GalleryLabels {
+  imageCount: string;
+  close: string;
+  previous: string;
+  next: string;
+  viewImage: string;
+  detailedDescription: string;
+  keyFeatures: string;
+}
 
 function ProjectsGroup({
   projects,
+  galleryLabels,
   lang = "en",
 }: {
-  projects: typeof PROJECTS;
+  projects: Project[];
+  galleryLabels: GalleryLabels;
   lang?: "en" | "ar";
 }) {
   const [selected, setSelected] = useState<Project | null>(null);
@@ -32,6 +57,7 @@ function ProjectsGroup({
             <ProjectCard
               {...p}
               lang={lang}
+              imageCountLabel={galleryLabels.imageCount}
               onClick={() => {
                 setSelected(p);
               }}
@@ -45,8 +71,12 @@ function ProjectsGroup({
         <ProjectPreviewModal
           title={selected.title}
           desc={selected.desc}
+          details={selected.details}
+          features={selected.features}
           tags={selected.tags}
           images={selected.images || []}
+          labels={galleryLabels}
+          lang={lang}
           onClose={() => setSelected(null)}
         />
       )}

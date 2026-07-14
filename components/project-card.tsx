@@ -8,6 +8,8 @@ type StatusVariant = "Completed" | "In Progress" | "Archived" | (string & {});
 const statusStyles: Record<string, string> = {
   Completed:
     "bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900",
+  مكتمل:
+    "bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900",
   "In Progress":
     "bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-900",
   Archived:
@@ -16,6 +18,7 @@ const statusStyles: Record<string, string> = {
 
 const statusDot: Record<string, string> = {
   Completed: "bg-emerald-500",
+  مكتمل: "bg-emerald-500",
   "In Progress": "bg-amber-400 animate-pulse",
   Archived: "bg-gray-400",
 };
@@ -26,7 +29,8 @@ interface ProjectCardProps {
   status: StatusVariant;
   tags: string[];
   period?: string;
-  images?: string[];
+  images?: { src: string; alt: string }[];
+  imageCountLabel: string;
   lang?: "en" | "ar";
   onClick?: () => void;
 }
@@ -38,6 +42,7 @@ function ProjectCard({
   tags,
   period,
   images,
+  imageCountLabel,
   lang = "en",
   onClick,
 }: ProjectCardProps) {
@@ -112,8 +117,16 @@ function ProjectCard({
 
       {/* Image hint */}
       {images && images.length > 0 && (
-        <p className="mt-3 text-[10px] font-dm-mono text-cyan-500 dark:text-cyan-400/60 tracking-widest uppercase">
-          {images.length} image{images.length !== 1 ? "s" : ""} →
+        <p
+          className={cn(
+            "mt-3 text-[10px] text-cyan-500 dark:text-cyan-400/60 tracking-widest",
+            lang === "en" && "font-dm-mono uppercase",
+          )}
+        >
+          {imageCountLabel.replace("{count}", String(images.length))}{" "}
+          <span aria-hidden className="inline-block rtl:rotate-180">
+            →
+          </span>
         </p>
       )}
     </HoverGlowCard>

@@ -15,7 +15,11 @@ export default async function Projects({
         label={projects.sectionLabel}
         heading={projects.heading}
       />
-      <ProjectsGroup projects={projects.items} lang={lang} />
+      <ProjectsGroup
+        projects={projects.items}
+        galleryLabels={projects.gallery}
+        lang={lang}
+      />
     </>
   );
 }
