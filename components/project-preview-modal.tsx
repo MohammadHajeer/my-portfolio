@@ -1,34 +1,35 @@
 "use client";
 
 import Image from "next/image";
+import type { Project, ProjectGalleryLabels } from "@/lib/project-types";
 import { cn } from "@/lib/utils";
 import { useCallback, useEffect, useState } from "react";
 
-interface ProjectPreviewModalProps {
-  title: string;
-  desc: string;
-  details?: string;
-  features?: string[];
-  tags: string[];
-  images: { src: string; alt: string }[];
-  labels: {
-    close: string;
-    previous: string;
-    next: string;
-    viewImage: string;
-    detailedDescription: string;
-    keyFeatures: string;
-  };
+interface ProjectPreviewModalProps
+  extends Pick<
+    Project,
+    | "title"
+    | "shortDescription"
+    | "description"
+    | "features"
+    | "technologies"
+    | "repoUrl"
+    | "liveUrl"
+    | "images"
+  > {
+  labels: ProjectGalleryLabels;
   lang?: "en" | "ar";
   onClose?: () => void;
 }
 
 function ProjectPreviewModal({
   title,
-  desc,
-  details,
+  shortDescription,
+  description,
   features,
-  tags,
+  technologies,
+  repoUrl,
+  liveUrl,
   images,
   labels,
   lang = "en",
@@ -45,7 +46,7 @@ function ProjectPreviewModal({
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowRight")
-        setActiveImg((i) => Math.min(i + 1, (images?.length ?? 1) - 1));
+        setActiveImg((i) => Math.min(i + 1, Math.max(images.length - 1, 0)));
       if (e.key === "ArrowLeft") setActiveImg((i) => Math.max(i - 1, 0));
     };
     window.addEventListener("keydown", handler);
@@ -78,7 +79,7 @@ function ProjectPreviewModal({
               {title}
             </h2>
             <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 mt-0.5">
-              {desc}
+              {shortDescription}
             </p>
           </div>
           <button
@@ -231,42 +232,21 @@ function ProjectPreviewModal({
               </div>
             )}
           </>
-        ) : (
-          /* Empty state when no images provided */
-          <div className="flex flex-col items-center justify-center gap-3 py-16 text-gray-300 dark:text-gray-700">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <path d="M21 15l-5-5L5 21" />
-            </svg>
-            {/* <p className="font-dm-mono text-[12px] tracking-widest uppercase">
-              No images yet
-            </p> */}
-          </div>
-        )}
+        ) : null}
 
-        {(details || (features && features.length > 0)) && (
+        {(description || features.length > 0) && (
           <div className="grid gap-5 px-6 py-5 border-t border-gray-100 dark:border-[#1a1a1a] md:grid-cols-2">
-            {details && (
+            {description && (
               <section>
                 <h3 className="mb-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
                   {labels.detailedDescription}
                 </h3>
                 <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
-                  {details}
+                  {description}
                 </p>
               </section>
             )}
-            {features && features.length > 0 && (
+            {features.length > 0 && (
               <section>
                 <h3 className="mb-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
                   {labels.keyFeatures}
@@ -281,21 +261,74 @@ function ProjectPreviewModal({
           </div>
         )}
 
-        {/* Footer — tags */}
-        <div className="flex flex-wrap gap-1.5 px-6 py-4 border-t border-gray-100 dark:border-[#1a1a1a]">
-          {tags.map((t) => (
-            <span
-              key={t}
-              className={cn(
-                "text-[11px] px-2.5 py-1 rounded font-dm-mono tracking-wide",
-                "bg-cyan-50 dark:bg-cyan-950",
-                "text-cyan-600 dark:text-cyan-300",
-                "border border-cyan-200 dark:border-cyan-900/60",
-              )}
-            >
-              {t}
-            </span>
-          ))}
+        {(repoUrl || liveUrl) && (
+          <div className="flex flex-wrap gap-2 px-6 py-4 border-t border-gray-100 dark:border-[#1a1a1a]">
+            {repoUrl && (
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(
+                  "inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-[12px] font-medium",
+                  "border border-gray-200 dark:border-white/10",
+                  "text-gray-700 dark:text-gray-200 hover:border-cyan-300 dark:hover:border-cyan-800",
+                  "transition-colors duration-150",
+                )}
+              >
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-4a3.4 3.4 0 0 0-1-2.6c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 20.4 5 5 5 0 0 0 20.3 1S19.1.6 16 2.5a13.4 13.4 0 0 0-7 0C5.9.6 4.7 1 4.7 1A5 5 0 0 0 4.6 5a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7A3.4 3.4 0 0 0 9 18v4" />
+                </svg>
+                {labels.repository}
+              </a>
+            )}
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(
+                  "inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-[12px] font-medium",
+                  "bg-cyan-600 text-white hover:bg-cyan-700",
+                  "transition-colors duration-150",
+                )}
+              >
+                {labels.liveDemo}
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        )}
+
+        {/* Footer — technologies */}
+        <div className="px-6 py-4 border-t border-gray-100 dark:border-[#1a1a1a]">
+          <h3 className="mb-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
+            {labels.technologies}
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {technologies.map((technology) => (
+              <span
+                key={technology}
+                className={cn(
+                  "text-[11px] px-2.5 py-1 rounded font-dm-mono tracking-wide",
+                  "bg-cyan-50 dark:bg-cyan-950",
+                  "text-cyan-600 dark:text-cyan-300",
+                  "border border-cyan-200 dark:border-cyan-900/60",
+                )}
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import type { Project } from "@/lib/project-types";
 import { HoverGlowCard } from "./hover-glow-card";
 
 type StatusVariant = "Completed" | "In Progress" | "Archived" | (string & {});
@@ -23,13 +24,12 @@ const statusDot: Record<string, string> = {
   Archived: "bg-gray-400",
 };
 
-interface ProjectCardProps {
-  title: string;
-  desc: string;
+interface ProjectCardProps
+  extends Pick<
+    Project,
+    "title" | "shortDescription" | "technologies" | "period" | "images"
+  > {
   status: StatusVariant;
-  tags: string[];
-  period?: string;
-  images?: { src: string; alt: string }[];
   imageCountLabel: string;
   lang?: "en" | "ar";
   onClick?: () => void;
@@ -37,9 +37,9 @@ interface ProjectCardProps {
 
 function ProjectCard({
   title,
-  desc,
+  shortDescription,
   status,
-  tags,
+  technologies,
   period,
   images,
   imageCountLabel,
@@ -92,14 +92,14 @@ function ProjectCard({
           lang === "en" && "font-dm-sans",
         )}
       >
-        {desc}
+        {shortDescription}
       </p>
 
-      {/* Tags */}
+      {/* Technologies */}
       <div className="flex flex-wrap gap-1.5 mt-4">
-        {tags.map((t) => (
+        {technologies.map((technology) => (
           <span
-            key={t}
+            key={technology}
             className={cn(
               "text-[11px] px-2.5 py-0.75 rounded-md",
               "bg-cyan-50 dark:bg-cyan-950/60",
@@ -110,7 +110,7 @@ function ProjectCard({
               lang === "en" && "font-dm-mono",
             )}
           >
-            {t}
+            {technology}
           </span>
         ))}
       </div>

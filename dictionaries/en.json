@@ -129,13 +129,26 @@
       "next": "Next image",
       "viewImage": "View image {count}",
       "detailedDescription": "About the project",
-      "keyFeatures": "Key features"
+      "keyFeatures": "Key features",
+      "technologies": "Technologies",
+      "repository": "Source code",
+      "liveDemo": "Live demo"
     },
     "items": [
       {
         "title": "ASL Learning & Translation Platform",
-        "desc": "Built full-stack platform with Laravel and React (TS), implementing multi-role RBAC; integrated MediaPipe ASL translator with responsive UI; built gamified dashboard with points, PDF certs, and real-time chat using Pusher & MUI Charts.",
-        "tags": [
+        "shortDescription": "A full-stack platform for learning and translating American Sign Language with gamification and real-time collaboration.",
+        "description": "Built full-stack platform with Laravel and React (TS), implementing multi-role RBAC; integrated MediaPipe ASL translator with responsive UI; built gamified dashboard with points, PDF certs, and real-time chat using Pusher & MUI Charts.",
+        "features": [
+          "Multi-role access control using RBAC",
+          "American Sign Language translation powered by MediaPipe",
+          "Responsive learning interface",
+          "Gamified dashboard with a points system",
+          "PDF certificate generation",
+          "Real-time chat using Pusher",
+          "Interactive progress charts using MUI Charts"
+        ],
+        "technologies": [
           "Laravel",
           "React (TS)",
           "Tailwind CSS",
@@ -145,19 +158,48 @@
           "MUI Charts"
         ],
         "status": "Completed",
-        "period": "Feb 2024 – Jun 2024"
+        "period": "Feb 2024 – Jun 2024",
+        "repoUrl": null,
+        "liveUrl": null,
+        "images": []
       },
       {
         "title": "Quran Progress Tracker",
-        "desc": "Built full-stack Quran memorization tracker with Next.js and Appwrite, featuring multi-role RBAC; daily memorization & revision tracker with history and interactive charts using shadcn/ui; teacher dashboard for viewing students’ progress and notifications.",
-        "tags": ["Next.js", "Appwrite", "shadcn/ui", "React", "Tailwind CSS"],
+        "shortDescription": "A full-stack Quran memorization and revision tracker for students and teachers.",
+        "description": "Built full-stack Quran memorization tracker with Next.js and Appwrite, featuring multi-role RBAC; daily memorization & revision tracker with history and interactive charts using shadcn/ui; teacher dashboard for viewing students’ progress and notifications.",
+        "features": [
+          "Multi-role access control using RBAC",
+          "Daily memorization and revision tracking",
+          "Complete memorization and revision history",
+          "Interactive progress charts using shadcn/ui",
+          "Teacher dashboard for monitoring student progress",
+          "Notifications in the teacher dashboard"
+        ],
+        "technologies": [
+          "Next.js",
+          "Appwrite",
+          "shadcn/ui",
+          "React",
+          "Tailwind CSS"
+        ],
         "status": "Completed",
-        "period": "Apr 2025 – Aug 2025"
+        "period": "Apr 2025 – Aug 2025",
+        "repoUrl": null,
+        "liveUrl": null,
+        "images": []
       },
       {
         "title": "Smart Attendance System (IoT-based)",
-        "desc": "Built IoT attendance system using Arduino IDE & ESP8266 with React frontend and Node.js backend; developed backend API with Node.js and SQLite to store/manage student attendance records; implemented real-time tracking via WebSockets.",
-        "tags": [
+        "shortDescription": "An IoT-based attendance system with real-time tracking and a React management interface.",
+        "description": "Built IoT attendance system using Arduino IDE & ESP8266 with React frontend and Node.js backend; developed backend API with Node.js and SQLite to store/manage student attendance records; implemented real-time tracking via WebSockets.",
+        "features": [
+          "IoT attendance capture using ESP8266",
+          "React interface for attendance management",
+          "Node.js API for attendance records",
+          "Student attendance storage and management using SQLite",
+          "Real-time attendance updates using WebSockets"
+        ],
+        "technologies": [
           "Arduino IDE",
           "ESP8266",
           "React",
@@ -166,12 +208,15 @@
           "WebSockets"
         ],
         "status": "Completed",
-        "period": "Nov 2025 – Dec 2025"
+        "period": "Nov 2025 – Dec 2025",
+        "repoUrl": null,
+        "liveUrl": null,
+        "images": []
       },
       {
         "title": "RestoManager",
-        "desc": "A full-stack restaurant management and food-ordering platform connecting customers, restaurant owners, and administrators.",
-        "details": "RestoManager is a MERN Stack platform where restaurant owners can register their businesses, manage restaurant profiles, opening hours, categories, menu items, and customer orders. Customers can explore approved restaurants, browse menus, customize items, manage their cart, and track their orders. Administrators review restaurant applications and manage restaurant statuses.",
+        "shortDescription": "A full-stack restaurant management and food-ordering platform connecting customers, restaurant owners, and administrators.",
+        "description": "RestoManager is a MERN Stack platform where restaurant owners can register their businesses, manage restaurant profiles, opening hours, categories, menu items, and customer orders. Customers can explore approved restaurants, browse menus, customize items, manage their cart, and track their orders. Administrators review restaurant applications and manage restaurant statuses.",
         "features": [
           "Multi-role authentication and authorization for customers, restaurant owners, and administrators",
           "Restaurant registration with logo, banner, and verification document uploads",
@@ -184,7 +229,7 @@
           "Server-state caching and synchronization using TanStack Query",
           "Form validation using React Hook Form and Zod"
         ],
-        "tags": [
+        "technologies": [
           "React",
           "TypeScript",
           "Node.js",
@@ -201,6 +246,9 @@
           "Better Auth"
         ],
         "status": "Completed",
+        "period": null,
+        "repoUrl": "https://github.com/MohammadHajeer/resto-manager",
+        "liveUrl": null,
         "images": [
           {
             "src": "/assets/resto-manager/landscape.webp",
